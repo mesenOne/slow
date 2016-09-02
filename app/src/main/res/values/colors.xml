@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#3F51B5</color>
+
+    <color name="colorPrimaryMain">#4da8d9</color>
+
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 常用的颜色 -->
+    <color name="red">#FF0000 </color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_light">#393939</color>
+    <color name="orange_app">#ea6111</color>
+    <color name="main_app">#d84949</color>
+    <color name="bg_splash">#EB610F</color>
+    <color name="orange_second">#FFA200</color>
+    <color name="blue">#073888</color>
+    <color name="txt_grays">#989898</color>
+    <color name="app_main_green">#27c475</color>
+
+
+
+    <color name="cpb_grey">#ffdedede</color>
+    <color name="cpb_blue">#ff0099cc</color>
+    <color name="cpb_blue_dark">#ff00719b</color>
+    <color name="cpb_red">#ffff4444</color>
+    <color name="cpb_red_dark">#ffcd3a3a</color>
+    <color name="cpb_green">#ff99cc00</color>
+    <color name="cpb_green_dark">#ff6d9b00</color>
+    <color name="cpb_white">@android:color/white</color>
+    <color name="sms_ok">#bf4783ea</color>
+    <color name="sms_again">#4783ea</color>
+
+
+
+
+    <color name="yellow">#FFFF00</color>
+    <color name="gray">#808080</color>
+    <color name="dark_blue">#035b9a</color>
+    <color name="gray_lt">#ffececec</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_bg">#e5e5e5</color>
+    <color name="gray_bg_tittle">#f1f1f1</color>
+    <color name="bg">#FFFFFF</color>
+    <color name="gv_checked">#00FF7F</color>
+    <color name="gv_checkeds">#80FFFF</color>
+    <color name="gray_f2">#f2f2f2</color>
+    <color name="gray_ccc">#A9A9A9</color>
+
+    <color name="color_gray_btn_false">#CCCCCC</color>
+    <color name="color_gray_btn_true">#999999</color>
+    <color name="province_line_border">#ea5504</color>
+
+    <!-- 橙色 -->
+    <color name="oriange_color">#ea5504</color>
+
+    <color name="gray_light">#A9A9A9</color>
+    <color name="gray_dark">#828282</color>
+    <color name="gray_bg_light">#B5B5B5</color>
+    <color name="btn_color_home">#FFFFFF</color>
+    <color name="btn_click">#FF6600</color>
+    <color name="gray_more_config_title">#999999</color>
+    <color name="gray_more_config_button">#E1E1E1</color>
+    <color name="gray_more_config_button_normal">#525252</color>
+    <color name="gray_more_config_line">#E3E3E3</color>
+    <color name="publish_source_tag">#FDCC37</color>
+    <color name="color_coupon_divider">#F0F0F0</color>
+    <color name="send_sms_bg">#e210b3a4</color>
+    <color name="send_sms_bg_blue">#e30099cc</color>
+
+
+
+
+    <color name="backgroundcolor">#f2f2f2</color>
+    <!-- 主题色 -->
+    <color name="color_header_bg">#ff5722</color>
+    <color name="color_header_text">#FFFFFF</color>
+    <color name="color_main_bg">#F1F1F1</color>
+    <color name="color_item_bg">#FFFFFF</color>
+    <color name="color_text_main">#333333</color>
+    <color name="color_text_hint">#999999</color>
+    <color name="color_border_bg">#CCCCCC</color>
+    <color name="color_divider">#DDDDDD</color>
+    <color name="color_detail_staging_bg">#FFE8D5</color>
+    <color name="color_translucent_bar">#E96E06</color>
+    <color name="color_invite_bg">#FFED7D</color>
+    <color name="color_invite_text1">#B1962D</color>
+    <color name="color_invite_text2">#A88251</color>
+    <color name="color_invite_line">#F7CF32</color>
+    <color name="color_car_source">#777777</color>
+    <!-- item按下背景色，取色于微信 -->
+    <color name="color_click">#DADADA</color>
+
+    <!-- 车辆详情按钮颜色 -->
+    <color name="car_detail_advisory">#FFA200</color>
+    <color name="car_detail_not_advisory">#E3E3E3</color>
+    <color name="car_detail_call_seller">#E96E06</color>
+    <color name="car_detail_not_call_seller">#BDBDBD</color>
+    <color name="car_detail_estimated_bg">#91D45B</color>
+    <color name="car_detail_seller_des">#ED610A</color>
+
+
+
+    <color name="car_peccancyinfo_green">#00CD00</color>
+
+    <!-- 卖车 -->
+    <color name="color_car_basic_info_highlight">#333333</color>
+    <color name="color_toogleButton_on_color">#eb6112</color>
+    <color name="color_toogleButton_off_color">#ccc</color>
+    <color name="color_show_take_photo_bg">#20000000</color>
+
+    <!-- 品牌 -->
+    <color name="brand_listview_bar">#EEE9E9</color>
+
+    <!-- listView选中后颜色 -->
+    <color name="color_listView_select">@android:color/transparent</color>
+    <color name="color_first_page">#66b500</color>
+
+    <!-- 消息 -->
+    <color name="message_item_title">#666666</color>
+    <color name="message_item_content">#cccccc</color>
+
+    <!-- 违章 -->
+    <color name="peccancy_car_deal_comlete">#ec6012</color>
+
+</resources>

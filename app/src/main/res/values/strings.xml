@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="loading">努力加载中，请稍等...</string>
+
+    <!-- 引导页 -->
+    <string name="guide_skip">跳过</string>
+    <string name="app_name">后闲</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="cancel">取消</string>
+    <string name="comit">确定</string>
+    <string name="alert_no_button">取&#160;&#160;消</string>
+    <string name="alert_confirm2">确&#160;&#160;认</string>
+    <string name="provice_city_eare">省 / 市 / 区</string>
+    <string name="city">城市</string>
+
+    <!-- 刷新listview -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开立即刷新</string>
+    <string name="xlistview_header_hint_loading">正在刷新</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <!-- 卖车详情操作 -->
+    <string name="sellcar_delete">删除</string>
+    <string name="sellcar_edit">编辑</string>
+    <string name="sellcar_selled">已出售</string>
+    <string name="sellcar_online">上架</string>
+    <string name="sellcar_order">已预订</string>
+    <string name="sellcar_delete_cacel">取消</string>
+    <string name="sellcar_delete_comit">确定</string>
+    <string name="sellcar_delete_message">此操作会删除车源所有信息,是否确定删除?</string>
+    <string name="sellcar_edit_message">此操作会暂时将您的车辆下架,编辑后的车辆信息需要重新审核才能继续出售。是否确认此操作?</string>
+    <string name="sellcar_selled_message">此操作会彻底将您的车辆从平台下架,并无法再次上架，是否确认此操作?</string>
+    <string name="sellcar_online_message">此操作会继续在平台上出售您的车辆,是否确认操作?</string>
+    <string name="sellcar_order_message">此操作会将您的车辆标记为已预订，其他用户将无法与您取得联系。7天后若无其他操作，将默认您的车辆已售出，是否确认此操作？</string>
+    <!-- 智慧汽车首页 -->
+    <string name="user">个人中心</string>
+
+    <string name="teshufu_arrows">➥</string>
+
+
+    <!-- 广告页 -->
+    <string name="ad_ignore">点击跳过</string>
+
+    <!-- 二手车页面 -->
+    <string name="rbm">¥</string>
+    <string name="rbm_unit">万</string>
+    <string name="usedCar_hotList">热门车型</string>
+    <string name="usedCar_hotBrand">热门品牌</string>
+    <string name="usedCar_searchHistory">搜索历史</string>
+    <string name="usedCar_clearHistory">清空历史</string>
+    <string name="base_bottom_1">地气</string>
+    <string name="base_bottom_2">市圈</string>
+    <string name="base_bottom_3">我的</string>
+    <string name="base_bottom_5">用车</string>
+    <string name="base_bottom_4">个人中心</string>
+
+
+    <!-- 只能输入字母或数字的校验字符串 -->
+    <string name="only_can_input">qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890</string>
+
+    <!-- 买车页面 -->
+    <string name="buyCar_choose_city">城市</string>
+    <string name="buyCar_hostCity">热门城市</string>
+    <string name="buyCar_choose_brand">品牌</string>
+    <string name="buyCar_choose_price">价格</string>
+    <string name="buyCar_choose_more">更多</string>
+    <string name="title_usedCar_buyCar_search">品牌/型号/厂商</string>
+    <string name="title_usedCar_buyCar_city_search">城市名、拼音、首字母</string>
+    <string name="city_history">历史访问城市</string>
+    <string name="searchCity_history">搜索历史</string>
+    <string name="searchCity_clearHistory">清除搜索记录</string>
+    <string name="price_ok">确定</string>
+    <string name="price_unit">价格/单位：</string>
+    <string name="price_limit_min">6</string>
+    <string name="price_limit_max">不限</string>
+    <string name="search_cancel">取消</string>
+    <string name="more_commit">确认</string>
+    <string name="more_reset">重置</string>
+    <string name="hot_brand">热门品牌</string>
+    <string name="location">定位中...</string>
+    <string name="my_location">当前定位城市</string>
+    <string name="no_content">抱歉  Sorry！~</string>
+    <string name="no_content_refresh">刷新重试</string>
+    <string name="no_collection">没有收藏的车辆~</string>
+    <string name="no_buy">没有购买的车辆~</string>
+    <string name="no_history">没有历史记录~</string>
+
+
+
+    <!-- 违章查缴 -->
+    <string name="add_car">添加我的车辆</string>
+    <string name="add_car_new">我的车辆</string>
+    <string name="add_car_btn_bottom">添加查询车辆</string>
+    <string name="add_car_discription">添加车辆后，快速查询您的车辆违章情况</string>
+    <string name="add_car_discription_new">添加后，快速进行违章查缴</string>
+    <string name="introduce_of_peccancy">了解违章服务 ？</string>
+    <string name="manage_car">管理车辆</string>
+    <string name="peccancy_payment">违章缴费</string>
+    <string name="peccancy_info">违章信息</string>
+    <string name="peccancy_user_info">车主信息</string>
+    <string name="peccancy_add_car">添加新车辆</string>
+    <string name="peccancy_order">违章订单</string>
+    <string name="peccancy_order_state">当前状态</string>
+    <string name="peccancy_order_place">违章地点</string>
+    <string name="peccancy_order_content">违章内容</string>
+    <string name="peccancy_order_time">违章时间</string>
+    <string name="peccancy_order_deduct_marks">扣分情况</string>
+    <string name="peccancy_order_fine_amount">罚款金额</string>
+    <string name="peccancy_order_service_fee">服务费</string>
+    <string name="peccancy_pay_info">支付信息</string>
+    <string name="peccancy_order_fee">缴费订单</string>
+    <string name="no_peccancy_data">恭喜 ！ 您的车辆暂时没有违章记录</string>
+    <string name="car_licence">车牌号码</string>
+    <string name="car_brand">品牌车型</string>
+    <string name="drive_city">行驶城市</string>
+    <string name="safe_date">车险到期</string>
+    <string name="please_choose">请选择</string>
+    <string name="car_licence_hint">请输入车牌号码</string>
+    <string name="engine_number">发动机号码</string>
+    <string name="engine_number_hint">请输入完整发动机号</string>
+    <string name="car_frame">车辆识别代号</string>
+    <string name="car_frame_hint">请输入完整车架号</string>
+    <string name="add_car_introduce">您填写的信息仅用于车辆违章查询服务，智慧汽车严格遵守保密制度与隐私协议，保障用户隐私安全</string>
+    <string name="save_and_inquiry">保存并查询</string>
+    <string name="save_only">保存</string>
+    <string name="agree_peccancy_agreement">已阅读并同意《智慧汽车网违章查缴服务协议》</string>
+    <string name="peccancy_payment_order_name">便于办理违章缴费，请填写真实姓名</string>
+    <string name="peccancy_payment_order_phone">便于办理违章缴费，请填写真实电话</string>
+    <string name="peccancy_payable">可缴费的违章</string>
+    <string name="peccancy_pay_unable">不可缴费的违章</string>
+    <string name="peccancy_pay_unable_instruction">暂不支持缴费的违章（有扣分，未知扣分，未知罚款，0元0分，火车站/机场违章，部分高速违章，部分外地违章）</string>
+    <string name="other_cause">其他原因</string>
+    <string name="peccancy_order_submit">确认提交</string>
+    <string name="peccancy_car_fine">罚款</string>
+    <string name="peccancy_car_deduct_marks">扣分</string>
+    <string name="order_info">订单信息</string>
+    <string name="peccancy_fine">违章罚款</string>
+    <string name="total_price">总价</string>
+    <string name="preferential_info">优惠信息</string>
+    <string name="pay_amount">实付金额</string>
+    <string name="peccancy_payment_instruction">"1、罚金金额或其他信息输入错误可能造成办理失败\n2、罚单代缴订单会在2个工作日内办理完成\n3、办理失败的罚金及服务费将会在2-3个工作日内退回到您的支付账号中\n4、缴费过程中使用的优惠券也会同步返还到您的账号内"</string>
+    <string name="peccancy_pay_preferential">满120减10</string>
+    <string name="peccancy_state">"1、由于各城市车管所具体情况不同，可能出现部分违章缴费办理失败\n2、违章代缴订单会在7个工作日内办理完成\n3、办理失败的违章缴费罚金及服务费将会在2-3个工作日内退回到您的支付账号中\n4、缴费过程中使用的优惠券也会同步返还到您的账号内"</string>
+
+    <!-- 城市 -->
+    <string name="city_location">当前定位城市</string>
+    <string name="city_location_loading">正在定位中...</string>
+
+    <!-- 卖车界面 -->
+
+    <string name="photo_upload_demand">照片上传要求</string>
+    <string name="photo_upload_demand_content">1）车辆标准照建议14张，其中外观照7张、内饰照6张、发动机舱照1张；\n2）所拍摄照片内容须真实。\n3）所拍摄角度须完全展现被拍车辆或区域（外观拍摄时建议距离车辆1-1.5米；车门、车盖呈关闭状态；车辆周围无遮挡影响车辆展现）。\n4）所拍摄照片须清晰（禁止使用电子或纸制照片进行翻拍）。\n5）所拍摄照片中车牌号部位遮挡处理尽可能规则涂抹或遮挡。\n6）如上传图片质量较差，车辆可能无法得到认证并发布。</string>
+    <string name="tip_take_photo">Take photo</string>
+    <string name="folder_all">所有图片</string>
+    <string name="preview">Preview</string>
+    <string name="msg_no_camera">No system camera found</string>
+    <string name="msg_amount_limit">超出上传限制，最多上传18张</string>
+    <string name="action_done">完成</string>
+    <string name="photo_unit">Shot</string>
+    <string name="want_sell_car">我要卖车</string>
+    <string name="sell_car_step">卖车流程</string>
+    <string name="sell_car_step1">上传照片</string>
+    <string name="sell_car_step2">基本信息</string>
+    <string name="sell_car_step3">填写简介</string>
+    <string name="sell_car_free_tittle">帮您卖车</string>
+    <string name="sell_car_free_content">无中间环节，买卖双方自主交易</string>
+    <string name="sell_car_free_button">免费卖车</string>
+    <string name="sell_car_suggest_add_photo">上传建议角度的照片，成交率会提高哦！</string>
+    <string name="sell_car_suggest_broswer_photo">点击缩略图,可以预览照片,长按可设为封面！</string>
+    <string name="sell_car_next_step">下一步</string>
+    <string name="sell_car_next_step_in">Next</string>
+    <string name="sell_car_sugget_photo_count">建议上传照片的角度(最多不能超过18张)</string>
+    <string name="take_photo">进入拍照</string>
+    <string name="choose_photo">相册选取</string>
+    <string name="photo_paint">图片编辑</string>
+    <string name="edit">编辑</string>
+    <string name="upload_if_need_paint">您可以对照片进行涂抹和裁剪等编辑,是否需要编辑?</string>
+    <string name="upload_need_paint">需要</string>
+    <string name="upload_no_need_paint">不需要</string>
+    <string name="album_initialize">相册初始化</string>
+    <string name="album_wait">请稍后</string>
+    <string name="car_intro">基本信息</string>
+    <string name="car_intro_hint_content">描述您的车辆信息，最多500字</string>
+    <string name="car_intro_text_count">0/500字</string>
+    <string name="car_issue_right_now">马上发布</string>
+    <string name="car_photo_set_first">设为封面</string>
+    <string name="car_photo_delete">删除</string>
+    <string name="weixin_payment">微信支付</string>
+    <string name="weixin_payment_introduce">操作简单易用，支持大额支付</string>
+    <string name="zhifubao_payment">支付宝支付</string>
+    <string name="zhifubao_payment_introduce">推荐支付宝用户使用</string>
+
+
+
+    <!-- 车辆基本信息 -->
+    <string name="car_basic_info">车辆基本信息</string>
+    <string name="car_basic_info_more_detail">填写更多车辆信息，提高出售成功率</string>
+    <string name="car_you_contact">联系方式</string>
+    <string name="car_must_fill">(必填)</string>
+    <string name="car_choose_please">请选择&#160;&#160;</string>
+    <string name="car_insert_please">请输入&#160;&#160;</string>
+    <string name="car_insert_please_right">请输入</string>
+    <string name="car_name_brand">车辆名称</string>
+    <string name="car_registration_data">上牌时间</string>
+    <string name="car_location">牌照所在地</string>
+    <string name="car_location_meet">看车地点</string>
+    <string name="car_total_kilometres">行驶里程</string>
+    <string name="car_ten_thousand_kilometres">万公里</string>
+    <string name="car_color">车身颜色</string>
+    <string name="car_gearbox">变速箱</string>
+    <string name="car_pay_insurance">交强险</string>
+    <string name="car_gearbox_hand">&#160;&#160;&#160;&#160;手动&#160;&#160;&#160;&#160;</string>
+    <string name="car_gearbox_auto">&#160;&#160;&#160;&#160;自动&#160;&#160;&#160;&#160;</string>
+    <string name="car_gearbox_hand_and_auto">手自一体</string>
+    <string name="car_pay_insurance_no">&#160;&#160;&#160;&#160;&#160;&#160;无&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="car_pay_insurance_yes">&#160;&#160;&#160;&#160;&#160;&#160;有&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="car_maintenance_no">&#160;&#160;&#160;&#160;&#160;&#160;无&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="car_maintenance_4s">4S定期</string>
+    <string name="car_maintenance_no_4s">非4S定期</string>
+    <string name="car_Price_of_Presell">预售价</string>
+    <string name="car_ten_thousand_yuan">万元</string>
+    <string name="car_transfer_count">过户次数</string>
+    <string name="car_transfer_count_unit">次</string>
+    <string name="car_include_transfer_fee">含过户费</string>
+    <string name="car_licence_if">是否上牌</string>
+    <string name="car_insurance_deadline">保险到期时间</string>
+    <string name="car_annual_inspection_deadline">年检到期时间</string>
+    <string name="car_use_license_location">牌照所在地</string>
+    <string name="car_periodic_maintenance">保养情况</string>
+    <string name="car_linkman_host">联系人</string>
+    <string name="car_linkman_host_tel">联系号码</string>
+    <string name="car_year">年</string>
+    <string name="car_month">月</string>
+    <string name="car_day">日</string>
+    <string name="car_date_cancel">取消</string>
+    <string name="car_date_comit">确定</string>
+    <string name="price_warm_tips_tittle">温馨提示</string>
+    <string name="price_warm_tips_content">价格虚高可能会审核不通过，发布价格合理将大大提高成交率。</string>
+    <string name="price_warm_tips_comit">知道了</string>
+    <string name="car_light_config">车辆亮点配置</string>
+
+    <!-- 车辆详情 -->
+    <string name="detail_collect">知道了</string>
+    <string name="detail_title">起亚福瑞迪</string>
+    <string name="detail_from">平台</string>
+    <string name="detail_image_num">0/0</string>
+    <string name="detail_include_transfer">含过户</string>
+    <string name="detail_price_save">比新车省30.55万元</string>
+    <string name="detail_bought_time">购于2011年</string>
+    <string name="detail_swept_volume">排量2.6L</string>
+    <string name="detail_transmission">手自一体</string>
+    <string name="detail_mileage">2.35万公里</string>
+    <string name="detail_staging_half">付一半买车</string>
+    <string name="detail_staging">分期买车</string>
+    <string name="detail_bid">我要出价</string>
+    <string name="detail_car_detail">车辆详情</string>
+    <string name="detail_car_detail_highlight">亮点配置</string>
+    <string name="detail_car_detail_recommend">推荐车源</string>
+    <string name="detail_location">车辆所在地</string>
+    <string name="detail_car_color">车身颜色</string>
+    <string name="detail_car_type">车辆类型</string>
+    <string name="detail_inspection">年检到期</string>
+    <string name="detail_maintenance">保养情况</string>
+    <string name="detail_insurance">保险到期</string>
+    <string name="detail_emission_standards">排放标准</string>
+    <string name="detail_car_from">车辆来源</string>
+    <string name="detail_seller_description">卖家描述</string>
+    <string name="detail_car_description">上海二手朗行2013款——1.6L自动豪华版\n车辆经专家检测过的，由车猫认证担保，提供1058项检测报告，保证1年2万公里，15天问题车可退，
+	    平台交易资金担保。外观大气稳重，内饰空间充裕，视野开阔，动力强劲，通过性好。时间有限，没有上传所有车子，详细车况可通过微信和我细聊。\n
+	    微信号：sg4311\nQQ:3035178313\n联系我时，请说明在智慧汽车网上看到的，谢谢！</string>
+    <string name="detail_car_photo">车辆实拍</string>
+    <string name="detail_add_collect">加入收藏</string>
+    <string name="detail_advisory">留言/咨询</string>
+    <string name="detail_call_seller">联系卖家</string>
+    <string name="detail_call_seller_des_tip">联系我们时,请说是在智慧汽车网看到的,谢谢！</string>
+    <string name="detail_car_apply_right_now">立即申请 </string>
+
+    <!-- 我的页面 -->
+    <string name="me_user_phone_num">点击快速登录</string>
+    <string name="me_buy_manage">买车管理</string>
+    <string name="me_release_car">发布车辆</string>
+    <string name="me_collect">我的收藏</string>
+    <string name="me_history">浏览记录</string>
+    <string name="me_car">我的爱车</string>
+    <string name="me_oder">我的订单</string>
+    <string name="me_coupon">优惠券</string>
+    <string name="me_invite">邀请有礼</string>
+    <string name="me_company_authentification">车商认证</string>
+    <string name="me_company_authentification_name">车商姓名: </string>
+    <string name="me_company_authentification_license">营业执照号: </string>
+    <string name="me_company_authentification_city">所在城市: </string>
+    <string name="me_company_authentification_state">认证状态: </string>
+    <string name="me_authentification_state">未认证</string>
+    <string name="me_message_remind">消息提醒</string>
+    <string name="me_about_us">关于我们</string>
+    <string name="me_share">分享APP</string>
+    <string name="me_settings">设置</string>
+
+    <!-- 我的订单页面 -->
+    <string name="order_all">全部订单</string>
+    <string name="order_tag">分类订单</string>
+    <string name="order_break">违章查缴</string>
+    <string name="order_ticket">罚单代缴</string>
+    <string name="order_gas">加油充值</string>
+
+    <!-- 优惠券页面 -->
+    <string name="coupon_not_used">未使用</string>
+    <string name="coupon_used">已使用</string>
+    <string name="coupon_failed">已失效</string>
+
+    <!-- 我的爱车 -->
+    <string name="my_car_item_fine">罚款</string>
+    <string name="my_car_item_mark">扣分</string>
+    <string name="my_car_item_undeal">未处理违章</string>
+    <string name="my_car_peccancy">违章</string>
+    <string name="my_car_peccancy_money">罚金</string>
+
+    <!-- 邀请有礼页面 -->
+    <string name="invite_info">所有新用户登录即送200元新手礼包\n邀请新用户注册下载APP即可获得58元邀新礼包</string>
+    <string name="invite_qrcode">点击扫一扫</string>
+    <string name="invite_circle">朋友圈</string>
+    <string name="invite_qq">QQ好友</string>
+    <string name="invite_weibo">微博</string>
+    <string name="invite_qzone">空间</string>
+    <string name="invite_sms">短信</string>
+    <string name="invite_weixin">微信好友</string>
+    <string name="invite_share_info">复制你的专属链接，分享给朋友获取更多奖励！</string>
+    <string name="invite_log">邀请记录</string>
+    <string name="invite_logined">已登录</string>
+    <string name="invite_get_reward">领奖励</string>
+    <string name="invite_copy">复制</string>
+
+    <!-- 我的资料页面 -->
+    <string name="my_profile_title">个人资料</string>
+    <string name="my_profile_photo">头像</string>
+    <string name="my_full_name">昵称</string>
+    <string name="my_car">我的车辆</string>
+    <string name="my_full_name_add">添加</string>
+    <string name="my_real_name">姓名</string>
+    <string name="phone">电话</string>
+    <string name="my_real_name_add">请添加</string>
+    <string name="my_gender">性别</string>
+    <string name="my_gender_set">请设置</string>
+    <string name="my_phone">手机号</string>
+    <string name="my_phone_num"></string>
+    <string name="my_password">密码</string>
+    <string name="my_password_modify">修改</string>
+    <string name="qr_code">二维码</string>
+    <string name="my_logout">退出账号</string>
+    <string name="my_save">保存</string>
+
+    <!-- 修改资料页面 -->
+    <string name="modify_fullname_title">修改昵称</string>
+    <string name="modify_fullname_hint">可由1-12位中英文、数字、字母组成</string>
+    <string name="modify_realname_title">修改姓名</string>
+    <string name="modify_realname_hint">请输入2-20位字母或汉字</string>
+    <string name="modify_password_title">修改密码</string>
+    <string name="modify_password_hint">请验证您的原始密码</string>
+    <string name="modify_password_new_hint">请输入您将要设立的新密码</string>
+    <string name="modify_password_confirm_hint">请重新输入新设立的密码</string>
+    <string name="modify_ok">确定</string>
+    <string name="modify_password_original">原始密码</string>
+    <string name="modify_password_new">新设密码</string>
+    <string name="modify_password_repeat">重复密码</string>
+
+    <!-- 所有页面title -->
+    <string name="title_user_agreement">用户协议</string>
+    <string name="title_about">关于我们</string>
+    <string name="title_find_password">找回密码</string>
+    <string name="title_signup">注册</string>
+    <string name="title_login_right">快速注册</string>
+    <string name="title_login">登录</string>
+    <string name="title_settings">设置</string>
+    <string name="title_feedback">意见反馈</string>
+    <string name="title_history">浏览记录</string>
+    <string name="title_used_car_search">品牌/型号/厂商</string>
+    <string name="title_bought_manage">买车管理</string>
+    <string name="title_release_car">已发车源</string>
+    <string name="title_my_collect">我的收藏</string>
+    <string name="title_auth">车商认证</string>
+    <string name="title_car_detail">车辆详情</string>
+    <string name="title_confirm_order">确认订单</string>
+    <string name="title_order_detail">预订单详情</string>
+    <string name="title_pay_success">支付成功</string>
+    <string name="title_consult">留言/咨询</string>
+    <string name="title_order">我的订单</string>
+    <string name="title_coupon">优惠券</string>
+    <string name="title_invite">邀请有礼</string>
+    <string name="title_car_info">爱车情况</string>
+    <string name="title_login_auth">第三方登录</string>
+
+    <!-- 设置页面 -->
+    <string name="settings_new_message_switch">新消息通知</string>
+    <string name="settings_clean_cache">清除缓存</string>
+    <string name="settings_feedback">意见反馈</string>
+    <string name="settings_update">版本更新</string>
+
+    <!-- 反馈页面 -->
+    <string name="consult_ok">确认提交</string>
+    <string name="consult_first_hint">如果您有任何问题，都可以留下您的联系号码，相关工作人员会在第一时间和您联系！</string>
+    <string name="consult_content_hint">输入您需要咨询的问题（必填）</string>
+    <string name="consult_contact_hint">输入您的联系号码（必填）</string>
+
+    <!-- 预约咨询页面 -->
+    <string name="feedback_ok">确认提交</string>
+    <string name="feedback_first_hint">如果您在使用过程中，遇到任何问题，都可以反馈给我们</string>
+    <string name="feedback_content_hint">我们会及时处理您的反馈意见，谢谢！</string>
+    <string name="feedback_contact_hint">输入您的手机号码或QQ或邮箱账号（选填）</string>
+
+    <!-- 登录页面 -->
+    <string name="login_login_now">立即登录</string>
+    <string name="login_phone_num_hint">输入您的手机号码</string>
+    <string name="login_password_hint">输入您的密码</string>
+    <string name="login_forget_password">忘记密码</string>
+    <string name="login_sign_up">还没注册？</string>
+    <string name="login_other_login">第三方登录</string>
+    <string name="auth_info">为了给你更好的服务，请绑定一个智慧汽车网\n账号</string>
+    <string name="auth_no_account">没有智慧汽车网账号？</string>
+    <string name="auth_sign_up_now">快速注册</string>
+    <string name="auth_have_account">已有智慧汽车网账号？</string>
+    <string name="auth_bound">立即绑定</string>
+
+    <!-- 注册页面 -->
+    <string name="signup_signup_now">立即注册</string>
+    <string name="signup_phone_num_hint">输入您的手机号码</string>
+    <string name="signup_password_hint">输入您的密码</string>
+    <string name="signup_verify_key">输入您的验证码</string>
+    <string name="signup_get_verify_key">获取验证码</string>
+    <string name="signup_agreement">《智慧汽车网用户协议》</string>
+    <string name="signup_call_code">语音验证码</string>
+    <string name="signup_call_code_hint">若没收到验证码，请尝试</string>
+    <string name="signup_call_code_second">请留意语音验证码</string>
+    <string name="signup_agreement_front">我已阅读并同意</string>
+    <string name="signup_getMsgCode">输入您的密码</string>
+    <string name="signup_commit_verify_key">提交验证码</string>
+    <string name="signup_get_verify_key_send">已发送验证码至</string>
+
+    <!-- 找回密码页面 -->
+    <string name="forget_next">下一步</string>
+    <string name="forget_phone_num_hint">输入您的手机号码</string>
+    <string name="forget_imagekey_hint">输入您的图形验证码</string>
+    <string name="forget_message_key_hint">输入您的手机验证码</string>
+    <string name="forget_get_message_key">获取验证码</string>
+    <string name="forget_first_step">①验证手机</string>
+    <string name="forget_second_step">②绑定新密码</string>
+    <string name="forget_new_password_hint">输入新密码</string>
+    <string name="forget_new_password_again">再次输入新密码</string>
+    <string name="forget_submit">提交</string>
+
+    <!-- loadmore上拉加载 -->
+    <string name="cube_views_load_more_loading">加载中...</string>
+    <string name="cube_views_load_more_click_to_load_more">点击加载更多</string>
+    <string name="cube_views_load_more_loaded_no_more">全部数据加载完毕</string>
+    <string name="cube_views_load_more_loaded_empty">数据为空</string>
+    <string name="cube_views_load_more_error">加载失败,点击重试</string>
+
+    <!-- 各种页面Toast -->
+    <string name="toast_phone_num_null">请输入手机号</string>
+    <string name="toast_verify_key_null">请输入验证码</string>
+    <string name="toast_password_null">请输入您的密码</string>
+
+    <!-- 车商认证 -->
+    <string name="auth_hint_name">输入车商名称</string>
+    <string name="auth_hint_license">输入营业执照号</string>
+    <string name="auth_hint_city">请选择您所在的城市</string>
+    <string name="auth_upload_comit">确认提交</string>
+    <string name="auth_upload_please">上传您的营业执照</string>
+
+    <!-- 确认订单 -->
+    <string name="confirm_car_info">车辆信息</string>
+    <string name="confirm_car_title">起亚福瑞迪 1.6L手自一体P380000</string>
+    <string name="confirm_bought_time">购于2011年</string>
+    <string name="confirm_mileage">2.35万公里</string>
+    <string name="confirm_car_price">￥7.89万</string>
+    <string name="confirm_loan">借款买车，首付4万元起！</string>
+    <string name="confirm_buyer_info">买家信息</string>
+    <string name="confirm_contacts">联系人</string>
+    <string name="confirm_contacts_phone">联系号码</string>
+    <string name="confirm_money_info">定金信息</string>
+    <string name="confirm_pay_mode">支付方式</string>
+    <string name="confirm_alipay">支付宝</string>
+    <string name="confirm_alipay_info">推荐支付宝用户使用</string>
+    <string name="confirm_order_money">预付定金</string>
+    <string name="confirm_confirm_pay">确认并支付</string>
+    <string name="dialog_pay">1.订单将在2-7个工作日处理完毕，处理失败的订单会在1-2个工作日内全额退款。\n2.因信息填写错误造成的损失，将由您自行承担。\n3.处理完成的违章不提供回执凭证，以交管局实际下网为准。\n4.提交过订单后针对同一罚单请不要再去缴费，否则造成重复缴费将自行承担。</string>
+
+    <!-- 修改头像dialog -->
+    <string name="dialog_choose_photo">图片选择</string>
+    <string name="dialog_choose_gallery">相册选取</string>
+    <string name="dialog_choose_take">拍照选取</string>
+    <string name="dialog_choose_cancel">取消</string>
+
+    <!-- 修改性别dialog -->
+    <string name="dialog_gender_man">男</string>
+    <string name="dialog_gender_woman">女</string>
+
+    <!-- 拨打电话dialog -->
+    <string name="dialog_telephone_title">拨打电话</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_cancel">取消</string>
+
+    <!-- 订金支付成功 -->
+    <string name="order_ok">订金预付成功</string>
+    <string name="order_to_order">查看预订单</string>
+    <string name="order_more_car">更多车型</string>
+
+    <!-- 浏览记录 -->
+    <string name="history_delete">删除</string>
+    <string name="history_select_all">全选</string>
+
+    <!-- 预订单详情 -->
+    <string name="order_all_money">定金总额</string>
+    <string name="order_call_seller">联系卖家</string>
+    <string name="order_cancel_order">取消预订单</string>
+    <string name="order_finish">交易完成</string>
+    <string name="order_refund">退款中，预付的定金将会在五个工作日内退回您的支付宝账号。</string>
+    <string name="qr_code_text">扫一扫上面的二维码，加入智慧汽车网！</string>
+
+    <!-- 消息 -->
+    <string name="message_notify_title">消息</string>
+    <string name="message_product_chat_title">消息详情</string>
+    <string name="message_product_chat_send">发送</string>
+    <string name="message_product_chat_input">请输入文字内容</string>
+
+    <!-- 加油充值 -->
+    <string name="car_refuel_and_recharge">加油充值</string>
+    <string name="my_car_refuel_card">我的加油卡</string>
+    <string name="add_my_new_car_refuel_card">添加我的加油卡</string>
+    <string name="add_my_new_car_refuel_card_then_recharge">添加后,快速给加油卡充值</string>
+    <string name="add_refuel_card">添加加油卡</string>
+    <string name="recharge_result">充值结果</string>
+    <string name="car_refuel_card_msg">加油卡信息</string>
+    <string name="car_refuel_know_more">了解加油卡充值?</string>
+    <string name="car_refuel_rechange_money">充值金额</string>
+    <string name="car_refuel_pay_right_now">立即支付</string>
+    <string name="car_refuel_deal_read">已阅读并同意《智慧汽车网加油卡充值服务协议》</string>
+    <string name="car_more_use_car_serve">更多用车服务</string>
+    <string name="car_refuel_pay_record">我的充值记录</string>
+    <string name="car_refuel_card_pay">加油充值</string>
+    <string name="car_refuel_card_type">加油卡类型</string>
+    <string name="car_refuel_card_type_sinopec">中石化</string>
+    <string name="car_refuel_card_type_petroChina">中石油</string>
+    <string name="car_refuel_card_number">加油卡卡号</string>
+    <string name="car_refuel_card_number_input_hint">请输入您的卡号</string>
+    <string name="car_refuel_card_number_input_tip">为了更好的完成加油卡的充值任务,请准确填写您的加油卡信息</string>
+    <string name="car_refuel_card_add_comit_and_save">确定保存</string>
+    <string name="my_refuel_card_add_new">添加新油卡</string>
+    <string name="my_refuel_card_edit">编辑</string>
+    <string name="my_refuel_card_comit">完成</string>
+    <string name="refuel_order_pay_actual">实付:</string>
+    <string name="refuel_order_comit_and_pay">确认并支付</string>
+    <string name="refuel_order_recharge_detail">充值详情</string>
+    <string name="refuel_order_card">加油卡</string>
+    <string name="refuel_order_card_owner">持卡人</string>
+    <string name="refuel_order_card_number">卡号</string>
+    <string name="refuel_order_recharge_money">充值金额</string>
+    <string name="refuel_order_connect_msg">联系信息</string>
+    <string name="refuel_order_connect_number">联系信息</string>
+    <string name="refuel_order_choose_pay_method">请选择支付方式</string>
+    <string name="refuel_order_zhifu_pay">支付宝</string>
+    <string name="refuel_order_use_coupon">使用优惠券</string>
+    <string name="refuel_order_zhifu_pay_recommand">推荐支付宝用户使用</string>
+    <string name="refuel_recharge_result_success">充值加油卡成功</string>
+    <string name="refuel_recharge_result_msg">充值订单会在5&#8211;10分钟内处理完成</string>
+    <string name="refuel_recharge_result_see_refuel_order">查看订单</string>
+    <string name="refuel_recharge_result_comit">完成</string>
+    <string name="refuel_recharge_result_declare1">1. 由于中石化充值渠道每天夜间维护，因此加油卡充值工作时间为为【6：00&#8211;22：00】用户在此期间提交的订单会在5&#8211;10分钟内到账。</string>
+    <string name="refuel_recharge_result_declare2">2. 如支付后超过8小时未到账，请联系免费客服热线400&#8211;11&#8211;360&#8211;11。</string>
+    <string name="refuel_recharge_result_declare3">3. 如出现充值失败的情况，您的充值金额会自动退款到您的充值账户中，您可以在您的加油订单中查询充值状况。</string>
+    <string name="refuel_recharge_payment_instruction">1. 由于中石化充值渠道每天夜间维护，因此加油卡充值工作时间为为【6：00–22：00】用户在此期间提交的订单会在5–10分钟内到账。\n2. 如支付后超过8小时未到账，请联系免费客服热线400–11–360–11。\n3. 如出现充值失败的情况，您的充值金额会自动退款到您的充值账户中，您可以在您的加油订单中查询充值状况。</string>
+
+    <!-- 用车 -->
+    <string name="use_car">车生活</string>
+
+    <!-- 快速缴费 -->
+    <string name="quickpay_ok">知道了</string>
+    <string name="quickpay_one">1.请先至交管部门处理好您的违章</string>
+    <string name="quickpay_two">2.填写一下表单及可在线缴费</string>
+    <string name="quickpay_city">缴费城市/身份</string>
+    <string name="quickpay_shanghai">上海</string>
+    <string name="quickpay_photo">罚单照片</string>
+    <string name="quickpay_bianhao">罚单编号</string>
+    <string name="quickpay_content">内容 "-" 无需输入</string>
+    <string name="quickpay_money">处罚金额</string>
+    <string name="quickpay_print">请输入</string>
+    <string name="quickpay_faile">请对照罚单上金额准确填写,填写错误将导致订单处理失败</string>
+    <string name="quickpay_time">处罚时间</string>
+    <string name="quickpay_zhina">滞纳金</string>
+    <string name="quickpay_shuzi">0</string>
+    <string name="quickpay">快速缴费</string>
+    <string name="no_peccancy_info">无违章记录</string>
+    <string name="peccancy_choose_all">  全选   </string>
+
+    <!-- 优惠券 -->
+    <string name="no_coupon">对不起，您没有可以使用的优惠券</string>
+    <string name="no_coupon_unuse">对不起，您没有未使用的优惠券</string>
+    <string name="no_coupon_have_used">对不起，您没有已使用的优惠券</string>
+    <string name="no_coupon_use_loss">对不起，您没有已失效的优惠券</string>
+
+    <!-- 违章查缴 -->
+    <string name="fill_must">必填项</string>
+    <string name="fill_choosed">选填项</string>
+
+    <!-- 申请分期 -->
+    <string name="trial_money">请输入分期金额</string>
+    <string name="trial_repayment">您每月需还款</string>
+    <string name="trial_jisuan">计算结果仅为参考,实际费用请以还款计划为准!</string>
+    <string name="trial_js">计算结果仅为参考,实际费用请以还款计划为准!</string>
+    <string name="loan_ceiling">贷款总额</string>
+    <string name="trial_shenqing">正在申请</string>
+    <string name="trial_loanceiling">(3~50万)</string>
+    <string name="trial_locan">10</string>
+    <string name="trial_Million_translation">万元</string>
+    <string name="trial_selectmoney">选择借款期数</string>
+    <string name="trial_ono">立即申请</string>
+    <string name="trial_month">元/月</string>
+    <string name="trial_name">请填写您的真实姓名</string>
+    <string name="trial_phone">手机号</string>
+    <string name="trial_Valid_phone">请输入有效的手机号</string>
+    <string name="verify_key">验证码</string>
+    <string name="trial_conmitono">提交申请</string>
+    <string name="trial_Submitted_successfully">提交成功</string>
+    <string name="trial_Congratulations_on">恭喜您申请成功！我们的工作人员会尽快与您联系。</string>
+    <string name="trial_proposer">申请人：</string>
+    <string name="trial_contact_number">联系电话：</string>
+    <string name="trial_Applications_amount">申请金额：</string>
+    <string name="trial_Number_period">借款期数：</string>
+    <string name="trial_what_line">如有疑问请拨打免费客户热线</string>
+    <string name="trial_line">400-11-360-11</string>
+    <string name="trial_people">人</string>
+
+    <!-- 虚拟键盘 -->
+    <string name="number_zero">0</string>
+    <string name="number_one">1</string>
+    <string name="number_two">2</string>
+    <string name="number_three">3</string>
+    <string name="number_four">4</string>
+    <string name="number_five">5</string>
+    <string name="number_six">6</string>
+    <string name="number_seven">7</string>
+    <string name="number_eight">8</string>
+    <string name="number_nine">9</string>
+
+</resources>

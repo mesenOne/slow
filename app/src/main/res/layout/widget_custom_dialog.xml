@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_layout_dialog_card_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_delete_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/height_or_width_48dp"
+        android:paddingLeft="@dimen/padding_16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/orange_app"
+        android:textSize="@dimen/activity_18_size" />
+
+    <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <View
+            android:id="@+id/views_above"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="2dp"
+            android:background="@color/orange_app" />
+            
+             <View
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="@dimen/height_divide_line"
+            android:background="@color/color_divider"  />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/delete_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/height_or_width_60dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_16dp"
+        android:textColor="@color/color_text_hint"
+        android:textSize="@dimen/activity_16_size" />
+    
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_divide_line"
+        android:background="@color/color_divider" />
+
+     
+    <LinearLayout 
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="15dp">
+	         <Button
+		        android:id="@+id/delete_cancel"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:alpha="1.0"
+		        android:background="@color/transparent"
+		        android:textColor="@color/black"
+		        android:textSize="@dimen/padding_tb18" />
+	         
+	         <View
+		        android:layout_width="@dimen/height_divide_line"
+		        android:layout_height="match_parent"
+		        android:background="@color/color_divider" />
+	         
+	         <Button
+		        android:id="@+id/delete_confirm"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:alpha="1.0"
+		        android:textColor="@color/orange_app"
+		        android:background="@color/transparent"
+		        android:textSize="@dimen/padding_tb18" />
+     </LinearLayout>
+
+</LinearLayout>

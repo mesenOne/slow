@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:custom="http://schemas.android.com/apk/res-auto"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:id="@+id/my_soft_layout">
+
+
+	<!--<include layout="@layout/header_center_align" />-->
+<!--	<LinearLayout
+		android:id="@+id/header_view_login"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/height_status_bar"
+			android:background="#3367d5" />
+	</LinearLayout>-->
+
+
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+		<com.indulge.freedom.who.view.panningview.library.PanningView
+			android:id="@+id/panningView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			custom:panningDurationInMs="100000"
+			android:src="@drawable/newyok3_webp"
+			/>
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#9f3367d5"/>
+
+		<!--#ae387593--> <!--a1387593-->
+	</RelativeLayout>
+
+
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="top"
+			android:layout_marginTop="20dp"
+			android:gravity="center_horizontal">
+
+
+			<LinearLayout
+				android:id="@+id/ll_who"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginBottom="25dp"
+				android:visibility="gone"
+				android:gravity="center"
+				android:padding="30dp">
+				<TextView
+					android:id="@+id/tv_title_login_w"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="w"
+					android:visibility="visible"
+					android:textSize="50sp"
+					android:textStyle="bold"
+					android:shadowRadius="3"
+					android:shadowDx="20"
+					android:shadowDy="-15"
+					android:shadowColor="#FD215B78"
+					android:textColor="@color/white"/>
+				<TextView
+					android:id="@+id/tv_title_login_h"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="h"
+					android:textSize="50sp"
+					android:textStyle="bold"
+					android:visibility="visible"
+					android:textColor="@color/white"
+					android:shadowRadius="3"
+					android:shadowDx="20"
+					android:shadowDy="-15"
+					android:shadowColor="#FD215B78"/>
+				<TextView
+					android:id="@+id/tv_title_login_o"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="o"
+					android:paddingRight="5dp"
+					android:textSize="50sp"
+					android:textStyle="bold"
+					android:visibility="visible"
+					android:textColor="@color/white"
+					android:shadowRadius="3"
+					android:shadowDx="20"
+					android:shadowDy="-15"
+					android:shadowColor="#FD215B78"
+					/>
+			</LinearLayout>
+
+			<!--<LinearLayout-->
+
+				<!--android:layout_width="match_parent"-->
+				<!--android:layout_height="wrap_content">-->
+				<!--<TextView-->
+					<!--android:id="@+id/txt_who"-->
+					<!--android:gravity="center"-->
+					<!--android:layout_weight="1"-->
+					<!--android:padding="30dp"-->
+					<!--android:textSize="50sp"-->
+					<!--android:text="who"-->
+					<!--android:textStyle="bold"-->
+					<!--android:visibility="visible"-->
+					<!--android:layout_width="0dp"-->
+					<!--android:layout_height="wrap_content"-->
+					<!--android:textColor="@color/white"-->
+					<!--/>-->
+			<!--</LinearLayout>-->
+
+
+
+
+			<com.indulge.freedom.who.view.textsurface.TextSurface
+				android:id="@+id/text_surface_login"
+				android:layout_width="match_parent"
+				android:layout_height="130dp"
+				android:layout_marginTop="55dp"
+				android:layout_gravity="center"
+				android:visibility="visible"
+				android:background="@color/transparent"/>
+
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:orientation="vertical"
+				android:layout_marginTop="40dp"
+				>
+
+				<!--登陆布局部分-->
+					<LinearLayout
+						android:id="@+id/ll_phonelogin_click"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:visibility="visible">
+
+						<RelativeLayout
+							android:layout_width="50dp"
+							android:layout_height="match_parent"
+							android:background="@drawable/shape_btn_bg_lift_fillet_blue_first"
+							>
+							<!--a40099cc-->
+							<ImageView
+								android:layout_width="14dp"
+								android:layout_height="14dp"
+								android:src="@drawable/ico_in_right"
+								android:layout_centerInParent="true"/>
+						</RelativeLayout>
+
+
+						<TextView
+							android:layout_weight="1"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:text="手机号快速登陆/注册"
+							android:textColor="#fff"
+							android:gravity="center"
+							android:textSize="15.5sp"
+							android:textStyle="bold"
+							android:background="@drawable/shape_btn_bg_right_fillet_blue_first"/>
+						<!--android:background="@color/cpb_blue"-->
+					</LinearLayout>
+
+
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<!--输入手机号-->
+					<LinearLayout
+						android:id="@+id/ll_phone_num"
+						android:layout_width="match_parent"
+						android:layout_height="46dp"
+						android:orientation="horizontal"
+						android:visibility="invisible">
+
+						<RelativeLayout
+							android:layout_width="50dp"
+							android:layout_height="match_parent"
+							android:background="@drawable/shape_btn_bg_lift_fillet_white"
+							>
+							<!--<TextView-->
+								<!--android:layout_width="wrap_content"-->
+								<!--android:layout_height="wrap_content"-->
+								<!--android:layout_centerInParent="true"-->
+								<!--android:textColor="#795d5d"-->
+								<!--android:text="+86"/>-->
+
+							<ImageView
+								android:id="@+id/iv_phone_is_login"
+								android:layout_width="16dp"
+								android:layout_height="16dp"
+								android:src="@drawable/phone_3"
+								android:layout_centerInParent="true"/>
+
+						</RelativeLayout>
+
+
+						<com.indulge.freedom.who.view.CustomEditText
+							android:id="@+id/et_phone_num"
+							android:layout_weight="1"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:textSize="15sp"
+							android:background="@drawable/shape_btn_bg_right_fillet_white"
+							android:maxLength="11"
+							android:phoneNumber="true"
+							android:hint="请输入手机号"
+							android:textColor="#999999"
+							android:textColorHint="#c6999999"
+							/>
+					</LinearLayout>
+
+
+
+					<LinearLayout
+						android:id="@+id/ll_other_login"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_marginTop="37dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:gravity="center_vertical"
+							android:layout_marginRight="30dp"
+							android:layout_marginLeft="30dp"
+							android:visibility="gone">
+							<View
+								android:layout_width="0dp"
+								android:layout_height="0.8dp"
+								android:layout_weight="1"
+								android:background="#f6ffffff"
+								android:layout_marginRight="10dp"/>
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="Or"
+								android:textStyle="italic"
+								android:layout_marginBottom="2dp"
+								android:textSize="20sp"
+								android:textColor="@color/white"/>
+							<View
+								android:layout_width="0dp"
+								android:layout_weight="1"
+								android:layout_height="0.8dp"
+								android:layout_marginLeft="10dp"
+								android:background="#f6ffffff"/>
+						</LinearLayout>
+
+
+						<!--三方登陆-->
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:weightSum="3"
+							android:layout_marginTop="35dp"
+							android:visibility="visible"
+							>
+
+							<ImageView
+								android:id="@+id/img_weixin"
+								android:layout_width="35dp"
+								android:layout_height="35dp"
+								android:src="@drawable/weixin2"
+								android:layout_weight="1"
+								/>
+
+							<ImageView
+								android:id="@+id/img_qq"
+								android:layout_width="30dp"
+								android:layout_height="30dp"
+								android:src="@drawable/qq2"
+								android:layout_weight="1"/>
+
+							<ImageView
+								android:id="@+id/img_weibo"
+								android:layout_width="35dp"
+								android:layout_height="35dp"
+								android:src="@drawable/weibo2"
+								android:layout_marginBottom="2dp"
+								android:layout_weight="1"/>
+						</LinearLayout>
+
+
+					</LinearLayout>
+
+
+
+
+            <!--输入密码-->
+					<LinearLayout
+						android:id="@+id/ll_password_str"
+						android:layout_width="match_parent"
+						android:layout_height="46dp"
+						android:orientation="horizontal"
+						android:visibility="gone"
+						android:layout_marginTop="6dp"
+						>
+
+						<RelativeLayout
+							android:id="@+id/rl_login_lookpw"
+							android:layout_width="50dp"
+							android:layout_height="match_parent"
+							android:background="@drawable/shape_btn_bg_lift_fillet_white"
+							>
+
+							<ImageView
+								android:id="@+id/iv_login_lookpw"
+								android:layout_width="33dp"
+								android:layout_height="33dp"
+								android:src="@drawable/pw_nolook"
+								android:layout_centerInParent="true"/>
+						</RelativeLayout>
+
+
+						<com.indulge.freedom.who.view.CustomEditText
+							android:id="@+id/et_password"
+							android:layout_weight="1"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:textSize="15sp"
+							android:background="@drawable/shape_btn_bg_right_fillet_white"
+							android:maxLength="11"
+							android:hint="密码(6个字符以上)"
+							android:textColor="#999999"
+							android:inputType="textPassword"
+							android:textColorHint="#c6999999"
+							/>
+					</LinearLayout>
+
+
+
+					<!--输入验证码-->
+					<LinearLayout
+						android:id="@+id/ll_verification_num"
+						android:layout_width="match_parent"
+						android:layout_height="46dp"
+						android:orientation="horizontal"
+						android:visibility="invisible"
+						android:layout_marginTop="6dp">
+
+						<RelativeLayout
+							android:id="@+id/rl_sendSMS"
+							android:layout_width="75dp"
+							android:layout_height="match_parent"
+							android:background="@drawable/shape_btn_bg_lift_fillet_blue_first"
+							>
+							<TextView
+								android:id="@+id/tv_sendSms"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_centerInParent="true"
+								android:textColor="#fff"
+								android:textSize="13sp"
+								android:text="发送验证码"/>
+						</RelativeLayout>
+
+						<com.indulge.freedom.who.view.CustomEditText
+							android:id="@+id/et_login_verification"
+							android:layout_weight="1"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:textSize="15sp"
+							android:background="@drawable/shape_bg_login_name_2"
+							android:maxLength="6"
+							android:phoneNumber="true"
+							android:hint="请输入验证码"
+							android:textColor="#999999"
+							android:textColorHint="#c6999999"
+							/>
+
+						<TextView
+							android:id="@+id/tv_second_verification"
+							android:layout_width="50dp"
+							android:layout_height="match_parent"
+							android:text="60"
+							android:gravity="center"
+							android:textSize="13sp"
+							android:textColor="#c8795d5d"
+							android:background="@drawable/shape_btn_bg_right_fillet_white"
+							/>
+					</LinearLayout>
+
+
+					<LinearLayout
+						android:id="@+id/ll_forget_password"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:gravity="center_vertical|right"
+						android:layout_marginTop="10dp"
+						android:visibility="invisible">
+
+						<TextView
+							android:id="@+id/tv_forget_password"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="忘记密码?"
+							android:textSize="12sp"
+							android:padding="5dp"
+							android:textStyle="bold"
+							android:textColor="#ffffff"/>
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/ll_login_now"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:visibility="invisible"
+						android:orientation="vertical"
+						android:layout_marginTop="40dp">
+
+
+						<com.indulge.freedom.who.view.circular_progress_button.CircularProgressButton
+							android:id="@+id/bt_login_now"
+							android:layout_width="140dp"
+							android:layout_height="43dp"
+							android:textColor="#ffffff"
+							android:textSize="16sp"
+							android:gravity="center"
+							app:cpb_cornerRadius="26dp"
+							android:textStyle="bold"
+							app:cpb_iconComplete="@drawable/ic_action_accept"
+							app:cpb_iconError="@drawable/erry_small"
+							app:cpb_textIdle="下一步"
+							android:layout_gravity="center"
+							/>
+						<!--app:cpb_iconComplete="@drawable/ic_action_accept"LET'S GO-->
+						<!--app:cpb_iconError="@drawable/ic_action_cancel"-->
+						<!--app:cpb_textIdle="下一步"➥  textColor = #4184f1 teshufu_arrows-->
+
+						<!--<Button-->
+							<!--android:id="@+id/bt_login_now"-->
+							<!--android:layout_width="wrap_content"-->
+							<!--android:layout_height="wrap_content"-->
+							<!--android:text="下一步"-->
+							<!--android:textColor="#cfcfcf"-->
+							<!--android:textSize="16sp"-->
+							<!--android:textStyle="bold"-->
+							<!--android:paddingLeft="40dp"-->
+							<!--android:paddingRight="40dp"-->
+							<!--android:background="#a41717"-->
+							<!--android:paddingTop="10dp"-->
+							<!--android:paddingBottom="10dp"-->
+							<!--android:layout_gravity="center"-->
+							<!--/>-->
+					</LinearLayout>
+
+
+
+				</LinearLayout>
+
+			</RelativeLayout>
+
+
+
+		</LinearLayout>
+
+
+	</ScrollView>
+
+
+
+</RelativeLayout>
