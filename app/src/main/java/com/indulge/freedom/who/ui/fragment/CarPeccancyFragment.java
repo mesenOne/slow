@@ -82,7 +82,7 @@ public class CarPeccancyFragment extends BaseFragment {
 //                show();
 //            }
 //        });
-
+//
         checkDebug.setChecked(Debug.ENABLED);
         checkDebug.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
