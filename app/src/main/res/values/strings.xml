@@ -5,7 +5,7 @@
 
     <!-- 引导页 -->
     <string name="guide_skip">跳过</string>
-    <string name="app_name">后闲</string>
+    <string name="app_name">SLOW</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="cancel">取消</string>
@@ -52,10 +52,10 @@
     <string name="usedCar_searchHistory">搜索历史</string>
     <string name="usedCar_clearHistory">清空历史</string>
     <string name="base_bottom_1">地气</string>
-    <string name="base_bottom_2">市圈</string>
-    <string name="base_bottom_3">我的</string>
+    <string name="base_bottom_2">城市圈</string>
+    <string name="base_bottom_3">我</string>
     <string name="base_bottom_5">用车</string>
-    <string name="base_bottom_4">个人中心</string>
+    <string name="base_bottom_4">消息</string>
 
 
     <!-- 只能输入字母或数字的校验字符串 -->

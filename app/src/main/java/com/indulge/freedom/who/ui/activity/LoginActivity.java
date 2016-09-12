@@ -5,8 +5,6 @@ import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
@@ -506,9 +504,8 @@ public class LoginActivity extends BaseActivity {
         }
 
         // 先将颜色展出铺满，然后启动新的Activity并finish当前Activity.
-        Intent intent = new Intent(LoginActivity.this, UsedCarActivity.class);
+        Intent intent = new Intent(LoginActivity.this, HomePagerActivity.class);
         CircularAnimUtil.startActivityThenFinish(LoginActivity.this, intent, btnSignupNow, R.color.colorPrimaryMain);
-         //
     }
 
 
@@ -585,7 +582,6 @@ public class LoginActivity extends BaseActivity {
                 }
                 break;
             case R.id.et_password:
-                show("点了");
                 isSignUp(false);
                 break;
 
@@ -632,7 +628,6 @@ public class LoginActivity extends BaseActivity {
 
                 break;
             case R.id.bt_login_now:
-//                btnSignupNow.requestFocus();
                 edtVerification.isVisibleDeleteIcon(false);
                 isSignUp(false);
                 if (btnSignupNow.getProgress() == 0) {

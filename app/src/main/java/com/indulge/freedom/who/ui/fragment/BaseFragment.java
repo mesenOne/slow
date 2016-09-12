@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -44,6 +45,8 @@ public abstract class BaseFragment extends Fragment {
 	// 应用是否销毁标志
 	protected boolean isDestroy;
 
+	private static final String STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN";
+
 	@Nullable
 	@Override
 	/**
@@ -57,6 +60,32 @@ public abstract class BaseFragment extends Fragment {
 		mScreenHeight = ScreenUtils.getScreenHeight(context);
 		return mRootView;
 	}
+
+
+		@Override
+	public void onCreate(@Nullable Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+		/**
+		 * 解决重用fragment问题
+		 */
+		if (savedInstanceState != null) {
+			boolean isSupportHidden = savedInstanceState.getBoolean(STATE_SAVE_IS_HIDDEN);
+			FragmentTransaction ft = getFragmentManager().beginTransaction();
+			if (isSupportHidden) {
+				ft.hide(this);
+			} else {
+				ft.show(this);
+			}
+			ft.commit();
+		}
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		outState.putBoolean(STATE_SAVE_IS_HIDDEN, isHidden());
+	}
+
+
 
 	@Override
 	public void onAttach(Context context) {

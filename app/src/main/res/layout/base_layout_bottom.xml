@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content">
 
     <View
         android:id="@+id/view_line"
@@ -9,49 +9,79 @@
         android:layout_height="@dimen/height_divide_line"
         android:background="@color/color_divider" />
 
+
+
     <RadioGroup
         android:id="@+id/base_ragroup_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_home_btn"
-        android:layout_below="@id/view_line"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:gravity="bottom"
-        android:orientation="horizontal" >
+    android:layout_below="@id/view_line"
+        android:layout_gravity="center_vertical"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <com.indulge.freedom.who.view.DoubleClickRadioButton
             android:id="@+id/rbt_car_peccancy"
             style="@style/base_bottom_btn_style"
             android:drawablePadding="@dimen/padding_base_bottom"
             android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_1"
-            android:paddingBottom="@dimen/padding_base_bottom"
-            android:paddingTop="@dimen/padding_base_bottom"
             android:text="@string/base_bottom_1"
-            android:textColor="@color/selector_base_layout_bottom_text_color"
-            android:textSize="@dimen/activity_12_size" />
+            android:textColor="@color/selector_base_layout_bottom_text_color" />
+        <!--android:text="@string/base_bottom_1"   android:paddingTop="12dp" android:drawablePadding="@dimen/padding_base_bottom"-->
 
         <com.indulge.freedom.who.view.DoubleClickRadioButton
             android:id="@+id/rbt_car_stage"
             style="@style/base_bottom_btn_style"
             android:drawablePadding="@dimen/padding_base_bottom"
             android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_3"
-            android:paddingBottom="@dimen/padding_base_bottom"
-            android:paddingTop="@dimen/padding_base_bottom"
             android:text="@string/base_bottom_2"
-            android:textColor="@color/selector_base_layout_bottom_text_color"
-            android:textSize="@dimen/activity_12_size" />
+            android:textColor="@color/selector_base_layout_bottom_text_color" />
+        <!--  android:paddingTop="12dp"-->
 
+
+        <Button
+            android:id="@+id/rbt_slow_publish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bottom_btn_publish"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_5"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:textColor="@color/white"
+             />
+
+
+        <!--style="@style/base_bottom_btn_style"-->
+        <com.indulge.freedom.who.view.DoubleClickRadioButton
+            android:id="@+id/rbt_slow_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawablePadding="2.5dp"
+            android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_2"
+            android:gravity="center"
+            android:paddingBottom="1dp"
+            android:paddingTop="9dp"
+            android:text="@string/base_bottom_4"
+            android:textColor="@color/selector_base_layout_bottom_text_color"
+            android:textSize="10.5sp" />
 
         <com.indulge.freedom.who.view.DoubleClickRadioButton
             android:id="@+id/rbt_mine"
             style="@style/base_bottom_btn_style"
             android:drawablePadding="@dimen/padding_base_bottom"
             android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_4"
-            android:paddingBottom="@dimen/padding_base_bottom"
-            android:paddingTop="@dimen/padding_base_bottom"
             android:text="@string/base_bottom_3"
-            android:textColor="@color/selector_base_layout_bottom_text_color"
-            android:textSize="@dimen/activity_12_size" />
+            android:textColor="@color/selector_base_layout_bottom_text_color" />
+        <!--android:text="@string/base_bottom_3"  -->
     </RadioGroup>
 
     <LinearLayout
@@ -60,7 +90,7 @@
         android:background="@color/transparent"
         android:clickable="false"
         android:focusable="false"
-        android:weightSum="4" >
+        android:weightSum="5">
 
         <Button
             android:id="@+id/btn_car_stage"
@@ -68,6 +98,14 @@
 
         <Button
             android:id="@+id/btn_car_peccancy"
+            style="@style/btn_usedCar_style" />
+
+        <Button
+            android:id="@+id/btn_slow_publish"
+            style="@style/btn_usedCar_style" />
+
+        <Button
+            android:id="@+id/btn_slow_search"
             style="@style/btn_usedCar_style" />
 
         <Button

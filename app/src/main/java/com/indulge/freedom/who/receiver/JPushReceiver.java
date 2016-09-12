@@ -6,18 +6,13 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 
 import cn.bmob.v3.helper.NotificationCompat;
 
-import com.google.gson.Gson;
-import com.indulge.freedom.who.AppContext;
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.model.JPush;
-import com.indulge.freedom.who.model.JPushJson;
 import com.indulge.freedom.who.ui.activity.LoginActivity;
-import com.indulge.freedom.who.ui.activity.UsedCarActivity;
+import com.indulge.freedom.who.ui.activity.HomePagerActivity;
 
 
 /**
@@ -170,8 +165,8 @@ public class JPushReceiver extends BroadcastReceiver {
 		intent2Act
 				.setClass(
 						context,
-						UsedCarActivity.exist ? (LoginActivity.class)
-								: UsedCarActivity.class);
+						HomePagerActivity.exist ? (LoginActivity.class)
+								: HomePagerActivity.class);
 		intent2Act.putExtra(PUSH_OPEN_ACTION, PUSH_OPEN_ACTION);
 		intent2Act.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
 				| Intent.FLAG_ACTIVITY_CLEAR_TOP);

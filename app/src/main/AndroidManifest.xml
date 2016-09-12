@@ -133,7 +133,7 @@
 
         <!-- 二手车主要Activity -->
         <activity
-            android:name=".ui.activity.UsedCarActivity"
+            android:name=".ui.activity.HomePagerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>

@@ -78,7 +78,7 @@ public class AdActivity extends Activity {
 				String username = (String) BmobUser.getObjectByKey("username");
 				if(username!=null){
 					Intent intent = new Intent();
-					intent.setClass(AdActivity.this, UsedCarActivity.class);
+					intent.setClass(AdActivity.this, HomePagerActivity.class);
 					intent.putExtra(Constant.ACTION, Constant.CAR_PECCANCY);
 					startActivity(intent);
 				}else{
@@ -98,7 +98,7 @@ public class AdActivity extends Activity {
 				}
 				if (Tools.containsString(mAd.getAdvertUrl(), "WeiZhang")) {
 					Intent intent = new Intent(this,
-							UsedCarActivity.class);
+							HomePagerActivity.class);
 					intent.putExtra(Constant.ACTION, Constant.CAR_PECCANCY);
 					startActivity(intent);
 					finish();
@@ -198,7 +198,7 @@ public class AdActivity extends Activity {
 						String username = (String) BmobUser.getObjectByKey("username");
 						if(username!=null){
 							Intent intent = new Intent();
-							intent.setClass(AdActivity.this, UsedCarActivity.class);
+							intent.setClass(AdActivity.this, HomePagerActivity.class);
 							intent.putExtra(Constant.ACTION, Constant.CAR_PECCANCY);
 							startActivity(intent);
 						}else{

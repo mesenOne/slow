@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -83,6 +86,41 @@ public class ImageUtils {
 		fos.write(bytes);
 		fos.close();
 	}
+
+
+	//获取网络图片
+	public static Bitmap getHttpBitmap(String urlString)
+	{
+		URL url;
+		Bitmap bitmap = null;
+
+		try
+		{
+			url = new URL(urlString);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setConnectTimeout(6000);
+			connection.setDoInput(true);
+			connection.setUseCaches(true);
+
+			InputStream is = connection.getInputStream();
+			bitmap = BitmapFactory.decodeStream(is);
+			is.close();
+		}
+		catch (MalformedURLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bitmap;
+
+
+	}
+
 
 	public static String Bitmap2StrByBase64(Bitmap bit) {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -784,6 +822,18 @@ public class ImageUtils {
 
 		return output;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * 获得带倒影的图片方法

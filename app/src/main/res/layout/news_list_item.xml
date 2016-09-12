@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/rl_list_item_gallery">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <View
+            android:id="@+id/view_gallery1"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+            <com.indulge.freedom.who.view.CustomShapeImageView
+                android:id="@+id/id_index_gallery_item_image"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                app:imageBorderWidth="0dp"
+                app:borderColor="@color/transparent"
+                app:onlyDrawBorder="false"
+                app:roundRadius="3dp"
+                app:shape="rectangle"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_gallery_bg"/>
+
+            <TextView
+                android:id="@+id/txt_gallery_center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="演唱会"/>
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/view_gallery2"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:visibility="gone"/>
+
+        <!--<TextView
+            android:id="@+id/txtNewsSource"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:background="#64CBD8" />-->
+    </LinearLayout>
+
+
+</RelativeLayout>

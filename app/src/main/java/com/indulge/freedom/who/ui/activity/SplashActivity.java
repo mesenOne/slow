@@ -6,7 +6,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -28,10 +27,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import cn.bmob.v3.BmobUser;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
 
 /**
  * Created by fengkehua on 2016/7/1.
@@ -156,7 +151,7 @@ public class SplashActivity extends Activity {
                                 // 如果不是第一次登陆 并且已经登陆 就直接进入主界面
                                 Intent intent = new Intent();
                                 intent.setClass(SplashActivity.this,
-                                        UsedCarActivity.class);
+                                        HomePagerActivity.class);
                                 intent.putExtra(Constant.ACTION, Constant.CAR_PECCANCY);
                                 startActivity(intent);
                             }else{

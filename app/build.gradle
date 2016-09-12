@@ -49,4 +49,6 @@ dependencies {
     compile files('libs/gson-2.6.2.jar')
     compile files('libs/filechoose.jar')
     compile files('libs/org.apache.http.legacy.jar')
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'top.zibin:Luban:1.0.8'
 }

@@ -79,7 +79,7 @@
 					android:shadowDx="20"
 					android:shadowDy="-15"
 					android:shadowColor="#FD215B78"
-					android:textColor="@color/white"/>
+					android:textColor="#89ffffff"/>
 				<TextView
 					android:id="@+id/tv_title_login_h"
 					android:layout_width="wrap_content"

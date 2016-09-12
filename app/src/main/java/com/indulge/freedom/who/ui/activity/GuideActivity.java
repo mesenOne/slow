@@ -113,7 +113,7 @@ public class GuideActivity extends Activity implements OnClickListener {
 		String username = (String) BmobUser.getObjectByKey("username");
 		if(username!=null){
 			Intent intent = new Intent();
-			intent.setClass(this, UsedCarActivity.class);
+			intent.setClass(this, HomePagerActivity.class);
 			intent.putExtra(Constant.ACTION, Constant.CAR_PECCANCY);
 			startActivity(intent);
 		}else{

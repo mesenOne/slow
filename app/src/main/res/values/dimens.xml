@@ -51,7 +51,7 @@
     <dimen name="height_second">54dp</dimen>
     <dimen name="activity_foot_height">40dp</dimen>
     <dimen name="list_single_height">48dp</dimen>
-    <dimen name="header_text_size">18sp</dimen>
+    <dimen name="header_text_size">21sp</dimen>
     <dimen name="header_text_size_right">12sp</dimen>
     <dimen name="shape_radius">1dp</dimen>
     <dimen name="radius">5dp</dimen>
@@ -60,7 +60,7 @@
     <dimen name="height_home_btn2">120dp</dimen>
     <dimen name="height_feedback_content_text">100dp</dimen>
     <dimen name="size_feedback_content_text">12sp</dimen>
-    <dimen name="height_status_bar">25dp</dimen>
+    <dimen name="height_status_bar">24dp</dimen>
 
     <!-- 二手车 -->
     <dimen name="activity_margin_top">4dp</dimen>
@@ -104,7 +104,7 @@
 
     <!-- button padding -->
     <dimen name="padding_button">8dp</dimen>
-    <dimen name="padding_base_bottom">4dp</dimen>
+    <dimen name="padding_base_bottom">1.7dp</dimen>
 
     <!-- 卖车界面 -->
     <dimen name="image_size">120dp</dimen>

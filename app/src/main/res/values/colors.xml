@@ -4,8 +4,8 @@
 
     <color name="colorPrimary">#3F51B5</color>
 
-    <color name="colorPrimaryMain">#4da8d9</color>
-
+    <color name="colorPrimaryMain">#f5225abc</color>
+    <color name="main_black_shenshi">#2b323a</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <!-- 常用的颜色 -->
@@ -14,7 +14,7 @@
     <color name="black">#000000</color>
     <color name="black_light">#393939</color>
     <color name="orange_app">#ea6111</color>
-    <color name="main_app">#d84949</color>
+    <color name="main_app">#2b8dee</color>
     <color name="bg_splash">#EB610F</color>
     <color name="orange_second">#FFA200</color>
     <color name="blue">#073888</color>
@@ -24,7 +24,7 @@
 
 
     <color name="cpb_grey">#ffdedede</color>
-    <color name="cpb_blue">#ff0099cc</color>
+    <color name="cpb_blue">#d94783ea</color>
     <color name="cpb_blue_dark">#ff00719b</color>
     <color name="cpb_red">#ffff4444</color>
     <color name="cpb_red_dark">#ffcd3a3a</color>
