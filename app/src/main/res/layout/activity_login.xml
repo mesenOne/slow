@@ -38,9 +38,10 @@
 		<View
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:background="#9f3367d5"/>
+			android:layout_alignParentTop="true"
+			android:background="#9f3367d5" />
 
-		<!--#ae387593--> <!--a1387593-->
+		<!--#ae387593--> <!--9f3367d5-->
 	</RelativeLayout>
 
 
@@ -128,8 +129,6 @@
 					<!--android:textColor="@color/white"-->
 					<!--/>-->
 			<!--</LinearLayout>-->
-
-
 
 
 			<com.indulge.freedom.who.view.textsurface.TextSurface

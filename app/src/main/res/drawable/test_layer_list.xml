@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- 最底层的图片，以x，y轴坐标为中心进行旋转-->
+        <rotate android:pivotX="0" android:pivotY="0"
+        android:fromDegrees="-10" android:toDegrees="-10">
+        <bitmap android:src="@drawable/test_touxiang"/>
+    </rotate>
+</item>
+    <!-- 第二层的图片，以x，y轴坐标为中心进行旋转-->
+<item>
+<rotate android:pivotX="0" android:pivotY="0"
+android:fromDegrees="15" android:toDegrees="15">
+<bitmap android:src="@drawable/test_touxiang"/>
+</rotate>
+    </item>
+    <!-- 最上层的图片，以x，y轴坐标为中心进行旋转-->
+<item>
+<rotate android:pivotX="-200" android:pivotY="-90"
+android:fromDegrees="0" android:toDegrees="0">
+<bitmap android:src="@drawable/test_touxiang"/>
+</rotate>
+    </item>
+    </layer-list>
+

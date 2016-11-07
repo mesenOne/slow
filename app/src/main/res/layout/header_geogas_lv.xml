@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical">
 
 
@@ -10,38 +12,35 @@
         android:id="@+id/carouse_geogas_lv_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        />
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
-        <!--<com.indulge.freedom.who.view.HorizontalListView-->
-            <!--android:id="@+id/id_listView_horizontal"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="85dp"-->
-            <!--android:background="#fff"-->
-            <!--android:scrollbars="none"-->
-            <!--app:dividerWidth="10dp"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:layout_marginBottom="10dp"/>-->
+
         <com.indulge.freedom.who.view.CenterLockHorizontalScrollview
             android:id="@+id/id_listView_horizontal"
             android:layout_width="match_parent"
             android:layout_height="85dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="2dp"
             android:background="#fff"
-            android:scrollbars="none"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            >
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
             </LinearLayout>
         </com.indulge.freedom.who.view.CenterLockHorizontalScrollview>
-
 
 
         <RelativeLayout
@@ -49,22 +48,22 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            >
+            android:visibility="invisible">
 
             <ImageView
                 android:id="@+id/iv_triangle"
                 android:layout_width="36dp"
                 android:layout_height="53dp"
-                android:background="@drawable/shape_triangle"/>
+                android:background="@drawable/shape_triangle" />
 
 
             <ImageView
                 android:layout_width="13dp"
                 android:layout_height="12dp"
-                android:layout_marginRight="4dp"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="44dp"
                 android:layout_alignRight="@id/iv_triangle"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="44dp"
                 android:background="@drawable/point" />
 
         </RelativeLayout>
@@ -75,6 +74,153 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="8dp"
-        android:background="#c8e5e5e5"/>
+        android:background="#24999999" />
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff"-->
+    <!--card_view:cardCornerRadius="0dp"-->
+    <!--card_view:cardElevation="20dp"-->
+    <!--android:layout_marginBottom="0.3dp"-->
+    <!--&gt;-->
+
+    <LinearLayout
+        android:id="@+id/ll_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="11dp">
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="0.5dp"
+                android:background="#000" />
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="9dp"
+                android:src="@drawable/icon_zhuanti" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="left"
+                android:paddingBottom="11dp"
+                android:paddingRight="10dp"
+                android:paddingTop="11dp"
+                android:text="同 城 热 帖"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="0.5dp"
+                android:background="#000" />
+
+
+        </LinearLayout>
+
+
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:focusable="true"-->
+        <!--android:clickable="true"-->
+        <!--card_view:cardCornerRadius="0dp"-->
+        <!--card_view:cardElevation="0dp"-->
+        <!--android:foreground ="@drawable/selector_cardview"-->
+        <!--card_view:cardBackgroundColor="@android:color/white">-->
+
+
+        <com.indulge.freedom.who.view.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:scaleType="centerCrop"
+            android:scrollbars="vertical"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/test_img4"
+            app:riv_border_color="#fff"
+            app:riv_border_width="0dp"
+            app:riv_corner_radius="1.2dp"
+            app:riv_mutate_background="false"
+            app:riv_oval="false"/>
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:background="#fff" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="#24999999"/>
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#48999999" />-->
+    </LinearLayout>
+    <!--</android.support.v7.widget.CardView>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="11dp"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="0.5dp"
+            android:background="#000" />
+
+        <ImageView
+            android:layout_width="18.6dp"
+            android:layout_height="18.6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="9dp"
+            android:src="@drawable/icon_jingxuan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="left"
+            android:paddingBottom="11dp"
+            android:paddingRight="10dp"
+            android:paddingTop="11dp"
+            android:text="热 门 话 题"
+            android:textColor="@color/black_mosha"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="0.5dp"
+            android:background="#000" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

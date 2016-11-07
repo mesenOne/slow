@@ -18,7 +18,7 @@
     <dimen name="activity_28_size">28sp</dimen>
     <dimen name="activity_title_size">16sp</dimen>
     <dimen name="activity_btn_size">18sp</dimen>
-
+    <dimen name="textandiconmargin">10dp</dimen>
 
     <dimen name="cpb_stroke_width">4dp</dimen>
 
@@ -60,7 +60,7 @@
     <dimen name="height_home_btn2">120dp</dimen>
     <dimen name="height_feedback_content_text">100dp</dimen>
     <dimen name="size_feedback_content_text">12sp</dimen>
-    <dimen name="height_status_bar">24dp</dimen>
+    <dimen name="height_status_bar">20dp</dimen>
 
     <!-- 二手车 -->
     <dimen name="activity_margin_top">4dp</dimen>

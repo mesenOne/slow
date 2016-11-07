@@ -232,7 +232,7 @@ public class AdActivity extends Activity {
 			SPUtil.saveFirstIn(AdActivity.this, false);
 			startActivity(new Intent(AdActivity.this, GuideActivity.class));
 		} else {
-			startActivity(new Intent(AdActivity.this, textActivity.class));
+			startActivity(new Intent(AdActivity.this, HomePagerActivity.class));
 		}
 		finish();
 	}

@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,11 @@ import com.indulge.freedom.who.config.Constant;
 
 import com.indulge.freedom.who.util.ScreenUtils;
 import com.indulge.freedom.who.util.ToastUtil;
+import com.indulge.freedom.who.view.ObservableScrollview.ObservableScrollViewCallbacks;
+import com.indulge.freedom.who.view.ObservableScrollview.ScrollState;
+import com.indulge.freedom.who.view.ObservableScrollview.Scrollable;
+import com.nineoldandroids.animation.ValueAnimator;
+import com.nineoldandroids.view.ViewHelper;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -35,7 +41,7 @@ import com.squareup.picasso.Picasso;
  * @author huhuan
  * 
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<S extends Scrollable> extends Fragment implements ObservableScrollViewCallbacks {
 	public abstract int getContentViewId();
 	protected Context context;
 	protected View mRootView;
@@ -44,7 +50,8 @@ public abstract class BaseFragment extends Fragment {
 
 	// 应用是否销毁标志
 	protected boolean isDestroy;
-
+	private View mToolbar;
+	private S mScrollable;
 	private static final String STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN";
 
 	@Nullable
@@ -58,9 +65,17 @@ public abstract class BaseFragment extends Fragment {
 		ButterKnife.bind(this, mRootView);// 绑定framgent
 		mScreenWidth = ScreenUtils.getScreenWidth(context);
 		mScreenHeight = ScreenUtils.getScreenHeight(context);
+
+		if (getObservableScrollTitleView()!=null){
+			mToolbar = getObservableScrollTitleView();
+			mScrollable = createScrollable();
+			mScrollable.setScrollViewCallbacks(this);
+		}
+
 		return mRootView;
 	}
-
+	protected abstract S createScrollable();
+	protected abstract View getObservableScrollTitleView();
 
 		@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -163,6 +178,64 @@ public abstract class BaseFragment extends Fragment {
 	}
 
 
-	
+	@Override
+	public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+	}
+
+	@Override
+	public void onDownMotionEvent() {
+	}
+
+	@Override
+	public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+		Log.e("DEBUG", "onUpOrCancelMotionEvent: " + scrollState);
+		if (scrollState == ScrollState.UP) {
+			if (toolbarIsShown()) {
+				hideToolbar();
+			}
+		} else if (scrollState == ScrollState.DOWN) {
+			if (toolbarIsHidden()) {
+//				if(){
+//
+//				}
+				showToolbar();
+			}
+		}
+	}
+
+	private boolean toolbarIsShown() {
+		return ViewHelper.getTranslationY(mToolbar) == 0;
+	}
+
+	private boolean toolbarIsHidden() {
+		return ViewHelper.getTranslationY(mToolbar) == -mToolbar.getHeight();
+	}
+
+	private void showToolbar() {
+		moveToolbar(0);
+	}
+
+	private void hideToolbar() {
+		moveToolbar(-mToolbar.getHeight());
+	}
+
+	private void moveToolbar(float toTranslationY) {
+		if (ViewHelper.getTranslationY(mToolbar) == toTranslationY) {
+			return;
+		}
+		ValueAnimator animator = ValueAnimator.ofFloat(ViewHelper.getTranslationY(mToolbar), toTranslationY).setDuration(200);
+		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+			@Override
+			public void onAnimationUpdate(ValueAnimator animation) {
+				float translationY = (float) animation.getAnimatedValue();
+				ViewHelper.setTranslationY(mToolbar, translationY);
+				ViewHelper.setTranslationY((View) mScrollable, translationY);
+				FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) ((View) mScrollable).getLayoutParams();
+				lp.height = (int) -translationY + ScreenUtils.getScreenHeight(getActivity()) - lp.topMargin;
+				((View) mScrollable).requestLayout();
+			}
+		});
+		animator.start();
+	}
 	
 }

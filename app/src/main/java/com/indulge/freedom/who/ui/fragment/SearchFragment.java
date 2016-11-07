@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.indulge.freedom.who.R;
+import com.indulge.freedom.who.view.xrecyclerview.XRecyclerView;
 
 //import com.umeng.analytics.MobclickAgent;
 
@@ -20,14 +21,25 @@ import com.indulge.freedom.who.R;
  * 
  */
 
-public class SearchFragment extends BaseFragment {
+public class SearchFragment extends BaseFragment<XRecyclerView> {
 
 
 	
 	@Override
 	public int getContentViewId() {
-		return R.layout.activity_main;
+		return R.layout.fragment_me;
 	}
+
+	@Override
+	protected XRecyclerView createScrollable() {
+		return null;
+	}
+
+	@Override
+	protected View getObservableScrollTitleView() {
+		return null;
+	}
+
 
 	@SuppressLint("InlinedApi")
 	@Override

@@ -2,27 +2,18 @@ package com.indulge.freedom.who.ui.activity;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -32,17 +23,11 @@ import com.indulge.freedom.who.AppContext;
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.config.Constant;
 
-import com.indulge.freedom.who.model.City;
-import com.indulge.freedom.who.model.ProductCount;
-import com.indulge.freedom.who.model.VersionInfo;
-import com.indulge.freedom.who.receiver.JPushReceiver;
 import com.indulge.freedom.who.service.DownloadAPKService;
-import com.indulge.freedom.who.ui.dialog.CustomDialog;
-import com.indulge.freedom.who.ui.fragment.CarPeccancyFragment;
+import com.indulge.freedom.who.ui.fragment.FeaturedFragment;
 import com.indulge.freedom.who.ui.fragment.CarStagingFragment;
 import com.indulge.freedom.who.ui.fragment.MineFragment;
 import com.indulge.freedom.who.ui.fragment.SearchFragment;
-import com.indulge.freedom.who.util.NetUtil;
 import com.indulge.freedom.who.util.SPUtil;
 import com.indulge.freedom.who.view.DoubleClickRadioButton;
 import com.readystatesoftware.viewbadger.BadgeView;
@@ -58,7 +43,6 @@ import butterknife.Bind;
 public class HomePagerActivity extends BaseActivity implements
         OnCheckedChangeListener, DoubleClickRadioButton.DoubleClickListener {
     public static boolean exist;// 是否存在
-    private static final int ACTION_MSG = 0x12;
     @Bind(R.id.base_ragroup_bottom)
     RadioGroup rgUsedCar;
     @Bind(R.id.rbt_car_stage)
@@ -78,7 +62,7 @@ public class HomePagerActivity extends BaseActivity implements
     private MineFragment mMineFragment;
     private SearchFragment mSearchFragment;
     private CarStagingFragment mCarStagingFragment;
-    private CarPeccancyFragment mCarPeccancyFragment;
+    private FeaturedFragment mFeaturedFragment;
 
     private BadgeView mBuyCarBadgeView;
 
@@ -89,15 +73,27 @@ public class HomePagerActivity extends BaseActivity implements
     private Fragment mCurrentFm;
     private List<Fragment> listFragments;
 
-    private LocationListener mLocationListener;// Gps消息监听器
-    private LocationManager mLocationManager;
-    private String cityName;
 
 
     @Override
     protected void setContentView() {
         setContentView(R.layout.activity_used_car);
         exist = true;
+    }
+
+    @Override
+    protected void findViews() {
+        rbtPublish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rbtStage.setTextSize(10.5f);
+                rbtSearch.setTextSize(10.5f);
+                rbtPeccancy.setTextSize(10.5f);
+                rbtMine.setTextSize(10.5f);
+                startActivityForResult(new Intent(context,publishActivity.class),0x886);
+                show("发表");
+            }
+        });
     }
 
     @Override
@@ -193,15 +189,16 @@ public class HomePagerActivity extends BaseActivity implements
 
                 break;
 
-            case R.id.rbt_slow_publish:
-                rbtStage.setTextSize(10.5f);
-                rbtSearch.setTextSize(10.5f);
-                rbtPeccancy.setTextSize(10.5f);
-                rbtMine.setTextSize(10.5f);
-
-                show("发表");
-
-                break;
+//            case R.id.rbt_slow_publish:
+//                rbtStage.setTextSize(10.5f);
+//                rbtSearch.setTextSize(10.5f);
+//                rbtPeccancy.setTextSize(10.5f);
+//                rbtMine.setTextSize(10.5f);
+//
+//                startActivity(new Intent(context,publishActivity.class));
+//                show("发表");
+//
+//                break;
 
             case R.id.rbt_slow_search:
                 rbtStage.setTextSize(10.5f);
@@ -227,16 +224,16 @@ public class HomePagerActivity extends BaseActivity implements
                 rbtSearch.setTextSize(10.5f);
                 rbtPeccancy.setTextSize(11);
                 rbtMine.setTextSize(10.5f);
-                if (!listFragments.contains(mCarPeccancyFragment)) {
-                    if (mCarPeccancyFragment == null) {
-                        mCarPeccancyFragment = new CarPeccancyFragment();
+                if (!listFragments.contains(mFeaturedFragment)) {
+                    if (mFeaturedFragment == null) {
+                        mFeaturedFragment = new FeaturedFragment();
                     }
-                    ft.add(R.id.base_layout_view, mCarPeccancyFragment,
-                            mCarPeccancyFragment.getClass().getSimpleName());
-                    listFragments.add(mCarPeccancyFragment);
+                    ft.add(R.id.base_layout_view, mFeaturedFragment,
+                            mFeaturedFragment.getClass().getSimpleName());
+                    listFragments.add(mFeaturedFragment);
                 }
                 getNewCount();
-                mCurrentFm = mCarPeccancyFragment;
+                mCurrentFm = mFeaturedFragment;
                 break;
 
             case R.id.rbt_mine:
@@ -274,52 +271,10 @@ public class HomePagerActivity extends BaseActivity implements
      * 初始化数字显示控件并绑定
      */
     public void getNewCount() {
-//		Map<String, Object> params = new HashMap<String, Object>();
-//		params.put("ErShouCarTimeStamp", SPUtil.getUsedCarTime(context));
-//		params.put("BuyCarTimeStamp", SPUtil.getBuyCarTime(context));
-//		Call<Result<ProductCount>> call = Http.getService().getProductCount(
-//				Http.getParams(params));
-//		call.enqueue(new Callback<Result<ProductCount>>() {
-//
-//			@Override
-//			public void onResponse(Response<Result<ProductCount>> response,
-//					Retrofit retrofit) {
-//				if (!isDestroy) {
-//					if (response != null) {
-//						Result<ProductCount> result = response.body();
-//						if (result != null) {
-//							Log.i("HY", result.toString());
-////							ProductCount productCount = result.result;
-////							mBuyCarCount = productCount.getBuyCarCount();
-//							showNumber();
-//						}
-//					}
-//				}
-//			}
-//
-//			@Override
-//			public void onFailure(Throwable arg0) {
-//
-//			}
-//
-//		});
+
     }
 
-    /**
-     * 显示数字控件
-     */
-    private void showNumber() {
-        if (mBuyCarCount != 0) {
-            if (mBuyCarCount < 100) {
-                mBuyCarBadgeView.setText(mBuyCarCount + "");
-            } else {
-                mBuyCarBadgeView.setText(99 + "+");
-            }
-            mBuyCarBadgeView.show();
-        } else {
-            mBuyCarBadgeView.hide();
-        }
-    }
+
 
 
     /**
@@ -393,4 +348,17 @@ public class HomePagerActivity extends BaseActivity implements
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case 0x886:
+                showFragment(0);
+                show("没有发表成功!");
+                break;
+
+            default:
+                break;
+        }
+    }
 }

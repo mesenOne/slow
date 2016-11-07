@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_take" >
+
+        <com.indulge.freedom.who.view.CameraPreview
+            android:id="@+id/hc_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <ImageView 
+            android:paddingBottom="@dimen/height_or_width_120dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/iv_bg_cut_photo"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/take_photo_filed"
+            />
+
+        <com.indulge.freedom.who.view.FocusView
+            android:id="@+id/view_focus"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+
+        <HorizontalScrollView
+            android:id="@+id/hs_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_or_width_120dp"
+            android:layout_alignParentBottom="true"
+            android:background="#20000000"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_8"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_take"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange_app" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:background="@null"
+            android:text="@string/car_date_cancel"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_18_size" />
+
+        <Button
+            android:id="@+id/btn_take"
+            android:layout_width="@dimen/height_or_width_48dp"
+            android:layout_height="@dimen/height_or_width_48dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/margin_16"
+            android:background="@color/black"
+            />
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_24"
+            android:background="@null"
+            android:text="@string/car_date_comit"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_18_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

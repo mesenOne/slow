@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,12 +11,11 @@
         android:background="@color/color_divider" />
 
 
-
     <RadioGroup
         android:id="@+id/base_ragroup_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_home_btn"
-    android:layout_below="@id/view_line"
+        android:layout_below="@id/view_line"
         android:layout_gravity="center_vertical"
         android:background="#fff"
         android:gravity="center_vertical"
@@ -44,17 +44,16 @@
             android:id="@+id/rbt_slow_publish"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/shape_bottom_btn_publish"
-            android:button="@null"
-            android:gravity="center"
-            android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_5"
-            android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
-            android:textColor="@color/white"
-             />
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bottom_btn_publish"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_base_layout_bottom_rabtn_5"
+            android:gravity="center"
+            android:textColor="@color/white" />
 
 
         <!--style="@style/base_bottom_btn_style"-->
@@ -88,7 +87,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_home_btn"
         android:background="@color/transparent"
-        android:clickable="false"
         android:focusable="false"
         android:weightSum="5">
 
@@ -102,15 +100,19 @@
 
         <Button
             android:id="@+id/btn_slow_publish"
-            style="@style/btn_usedCar_style" />
+            style="@style/btn_usedCar_style"
+            />
 
         <Button
             android:id="@+id/btn_slow_search"
-            style="@style/btn_usedCar_style" />
+            style="@style/btn_usedCar_style"
+            />
 
         <Button
             android:id="@+id/btn_mine"
-            style="@style/btn_usedCar_style" />
+            style="@style/btn_usedCar_style"
+
+            />
     </LinearLayout>
 
 </RelativeLayout>

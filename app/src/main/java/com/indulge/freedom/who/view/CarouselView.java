@@ -9,14 +9,16 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +93,7 @@ public class CarouselView extends RelativeLayout {
 
 		/* 初始化导航点布局 */
 		mDots = new LinearLayout(mContext);
+		mDots.setPadding(0,0,0,10);
 		setParams(0);
 	}
 	
@@ -122,8 +125,12 @@ public class CarouselView extends RelativeLayout {
 			 dotsParams.rightMargin=(int) (mWidth/11.0f);
 			dotsParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT,
 					RelativeLayout.TRUE);
+
 			addView(mDots, dotsParams);
+
 		}
+
+
 	}
 
 	public void setDefaultWidthHeight(int width, int height,int type) {
@@ -151,6 +158,7 @@ public class CarouselView extends RelativeLayout {
 			LayoutParams dotsParams = new LayoutParams(
 					LayoutParams.WRAP_CONTENT, mHeight / 10);
 			dotsParams.topMargin = (int) ((mHeight / 10f) * 9);
+
 			dotsParams.addRule(RelativeLayout.CENTER_HORIZONTAL,
 					RelativeLayout.TRUE);
 			addView(mDots, dotsParams);
@@ -161,6 +169,7 @@ public class CarouselView extends RelativeLayout {
 					LayoutParams.WRAP_CONTENT, mHeight / 10);
 			dotsParams.topMargin = (int) ((mHeight / 10f) * 9);
 			 dotsParams.rightMargin=(int) (mWidth/11.0f);
+
 			dotsParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT,
 					RelativeLayout.TRUE);
 			addView(mDots, dotsParams);
@@ -217,7 +226,7 @@ public class CarouselView extends RelativeLayout {
 						dotParams.leftMargin = ConversionUtil
 								.dp2px(mContext, 8);
 					} else {
-//						dot.setImageResource(R.drawable.icon_point_fff);
+//						dot.setImageResource(R.drawable.lingxings);
 						dot.setImageDrawable(getResources().getDrawable(R.drawable.shape_point));
 					}
 					mDots.addView(dot, dotParams);
@@ -231,8 +240,9 @@ public class CarouselView extends RelativeLayout {
 					if (i != 0) {
 						dot.setImageDrawable(getResources().getDrawable(R.drawable.shape_point_default));
 						dotParams.leftMargin = ConversionUtil
-								.dp2px(mContext, 3);
+								.dp2px(mContext, 5);
 					} else {
+//						dot.setImageResource(R.drawable.lingxings);
 						dot.setImageDrawable(getResources().getDrawable(R.drawable.shape_point));
 					}
 					mDots.addView(dot, dotParams);
@@ -286,10 +296,12 @@ public class CarouselView extends RelativeLayout {
 						dotParams.leftMargin = ConversionUtil
 								.dp2px(mContext, 8);
 					} else {
-//						dot.setImageResource(R.drawable.icon_point_fff);
+//						dot.setImageResource(R.drawable.lingxings);
 						dot.setImageDrawable(getResources().getDrawable(R.drawable.shape_point));
 					}
+					mDots.setGravity(Gravity.CENTER);
 					mDots.addView(dot, dotParams);
+
 				}
 			} else {
 				if (bannerList.size() > 1) {
@@ -303,8 +315,9 @@ public class CarouselView extends RelativeLayout {
 								.dp2px(mContext, 3);
 					} else {
 						dot.setImageDrawable(getResources().getDrawable(R.drawable.shape_point));
-						//dot.setImageResource(R.drawable.icon_point_fff);
+//						dot.setImageResource(R.drawable.lingxings);
 					}
+					mDots.setGravity(Gravity.CENTER);
 					mDots.addView(dot, dotParams);
 				}
 			}
@@ -462,10 +475,12 @@ public class CarouselView extends RelativeLayout {
 				if (mDots.getChildAt(mCurrentItem) != null) {
 					// 圆点选中
 					((ImageView) mDots.getChildAt(mCurrentItem))
-//							.setImageResource(R.drawable.icon_point_fff);
+//							.setImageResource(R.drawable.lingxings);
 					.setImageDrawable(getResources().getDrawable(R.drawable.shape_point));
+
 				}
 			}
+			mDots.setGravity(Gravity.CENTER);
 			mLastItem = mCurrentItem;
 		}
 

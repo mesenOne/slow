@@ -4,7 +4,7 @@
 
     <color name="colorPrimary">#3F51B5</color>
 
-    <color name="colorPrimaryMain">#f5225abc</color>
+    <color name="colorPrimaryMain">#fc225abc</color>
     <color name="main_black_shenshi">#2b323a</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -20,8 +20,7 @@
     <color name="blue">#073888</color>
     <color name="txt_grays">#989898</color>
     <color name="app_main_green">#27c475</color>
-
-
+    <color name="rippelColor">#e2999999</color>
 
     <color name="cpb_grey">#ffdedede</color>
     <color name="cpb_blue">#d94783ea</color>
@@ -50,9 +49,12 @@
     <color name="gray_f2">#f2f2f2</color>
     <color name="gray_ccc">#A9A9A9</color>
 
+    <color name="card_view_selector_true">#1f000000</color>
+
     <color name="color_gray_btn_false">#CCCCCC</color>
     <color name="color_gray_btn_true">#999999</color>
     <color name="province_line_border">#ea5504</color>
+    <color name="black_mosha">#4d4d4d</color>
 
     <!-- 橙色 -->
     <color name="oriange_color">#ea5504</color>

@@ -3,7 +3,9 @@ package com.indulge.freedom.who.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +60,11 @@ public class GalleryAdapter extends ArrayAdapter<Banner> {
 			holder.viewGallery1 =  layout.findViewById(R.id.view_gallery1);
 			holder.viewGallery2 =  layout.findViewById(R.id.view_gallery2);
 			holder.title = (TextView) layout.findViewById(R.id.txt_gallery_center);
+
+//			AssetManager mgr = context.getAssets();//得到AssetManager
+//			Typeface tf = Typeface.createFromAsset(mgr, "fonts/AppMainTXT.ttf");   //zhiheiti.ttf  lingHeiTi.ttf  HeiJian.TTF
+//			holder.title.setTypeface(tf);
+
 			layout.setTag(holder);
 
 		} else {

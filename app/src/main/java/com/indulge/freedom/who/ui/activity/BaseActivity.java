@@ -32,6 +32,8 @@ import com.indulge.freedom.who.util.ScreenUtils;
 import com.indulge.freedom.who.util.ToastUtil;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 /**
  * Activity基类
  * 
@@ -39,6 +41,8 @@ import com.squareup.picasso.Picasso;
  * 
  */
 public abstract class BaseActivity extends FragmentActivity {
+	private static final int NUM_OF_ITEMS = 100;
+
 	protected Context context;
 	protected int mScreenWidth;
 	protected int mScreenHeight;
@@ -220,6 +224,8 @@ public abstract class BaseActivity extends FragmentActivity {
 			super.onActivityResult(requestCode, resultCode, data);
 		}
 	}
+
+
 
 //	/**
 //	 * 网络访问

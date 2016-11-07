@@ -14,12 +14,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-
+import android.annotation.TargetApi;
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
@@ -59,6 +62,11 @@ public class Tools {
 
 		}
 	};
+
+
+
+
+
 
 	/*
 	 * 判断字符串是否包含一些字符 contains

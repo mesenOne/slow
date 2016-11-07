@@ -33,6 +33,10 @@ import cn.bmob.v3.BmobUser;
  */
 public class SplashActivity extends Activity {
 
+/**
+ * 粒子动画
+ */
+
 
     private ImageView mSplash;
     private AnimationDrawable mAnimationDrawable;

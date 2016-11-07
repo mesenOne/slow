@@ -46,7 +46,7 @@ public class FontController {
         fontsMap.put("11", "fonts/Roboto-BoldCondensed.ttf");
         fontsMap.put("12", "fonts/Roboto-BoldCondensedItalic.ttf");
         fontsMap.put("13", "fonts/Roboto-BoldItalic.ttf");
-        fontsMap.put("14", "fonts/Roboto-Black.ttf");
+        fontsMap.put("14", "fonts/ZhengDaHeiRoboto-Black.ttf");
         fontsMap.put("15", "fonts/Roboto-BlackItalic.ttf");
 
         fontsMap.put("regular", "fonts/Roboto-Regular.ttf");
@@ -63,7 +63,7 @@ public class FontController {
         fontsMap.put("bold_condensed", "fonts/Roboto-BoldCondensed.ttf");
         fontsMap.put("bold_condensed_italic", "fonts/Roboto-BoldCondensedItalic.ttf");
         fontsMap.put("bold_italic", "fonts/Roboto-BoldItalic.ttf");
-        fontsMap.put("black", "fonts/Roboto-Black.ttf");
+        fontsMap.put("black", "fonts/ZhengDaHeiRoboto-Black.ttf");
         fontsMap.put("black_italic", "fonts/Roboto-BlackItalic.ttf");
     }
 

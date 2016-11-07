@@ -11,6 +11,13 @@
         <item name="android:windowIsFloating">true</item>
     </style>
 
+    <style name="DexScrollImageViewStyle">
+        <item name="zoom">2</item>
+        <item name="angle">90</item>
+        <item name="drawer">scale|translate</item>
+        <item name="generator">base</item>
+        <item name="evaluator">scrollBased</item>
+    </style>
     <!-- 底部导航 -->
     <style name="base_bottom_btn_style">
         <item name="android:button">@null</item>
@@ -22,6 +29,16 @@
         <item name="android:textSize">10.5sp</item>
         <item name="android:paddingBottom">1dp</item>
         <item name="android:paddingTop">7dp</item>
+    </style>
+
+
+
+
+
+    <style name="Toolbar" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
     <!-- 底部导航 -->
@@ -106,8 +123,6 @@
     </style>
 
 
-
-
     <!-- 自定义对话框 -->
     <style name="MyDialogStyle">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -146,15 +161,11 @@
     </style>
 
     <!-- dialog出现和退出的动画 -->
-    <style name="dialogWindowAnim" parent="android:Animation" mce_bogus="1">
+    <style name="dialogWindowAnim" mce_bogus="1" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/modal_out</item>
 
     </style>
-
-
-
-
 
 
 </resources>

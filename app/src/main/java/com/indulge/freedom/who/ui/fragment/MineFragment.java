@@ -17,10 +17,12 @@ import android.view.WindowManager;
 
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.util.SPUtil;
+import com.indulge.freedom.who.view.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 //import com.umeng.analytics.MobclickAgent;
 
 
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.Call;
 import retrofit.Callback;
@@ -34,13 +36,24 @@ import retrofit.Retrofit;
  * 
  */
 
-public class MineFragment extends BaseFragment {
-
-
+public class MineFragment extends BaseFragment<XRecyclerView>  {
+//
+//	@Bind(R.id.lv_geogas)
+//	XRecyclerView mRecyclerView;
 	
 	@Override
 	public int getContentViewId() {
-		return R.layout.activity_main;
+		return R.layout.fragment_me;
+	}
+
+	@Override
+	protected XRecyclerView createScrollable() {
+		return null;
+	}
+
+	@Override
+	protected View getObservableScrollTitleView() {
+		return null;
 	}
 
 	@SuppressLint("InlinedApi")

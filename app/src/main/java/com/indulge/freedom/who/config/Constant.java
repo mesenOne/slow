@@ -1,7 +1,7 @@
 package com.indulge.freedom.who.config;
 
 
-import com.indulge.freedom.who.ui.fragment.CarPeccancyFragment;
+import com.indulge.freedom.who.ui.fragment.FeaturedFragment;
 import com.indulge.freedom.who.ui.fragment.CarStagingFragment;
 import com.indulge.freedom.who.ui.fragment.MineFragment;
 import com.indulge.freedom.who.ui.fragment.SearchFragment;
@@ -21,7 +21,7 @@ public class Constant {
 	public static final String MINE = MineFragment.class.getSimpleName();// 标识跳MineFragment的action
 	public static final String CAR_STAGE = CarStagingFragment.class.getSimpleName();// 标识跳MineFragment的action
 	public static final String SLOW_SEARCH = SearchFragment.class.getSimpleName();// 标识跳MineFragment的action
-	public static final String CAR_PECCANCY = CarPeccancyFragment.class.getSimpleName();// 标识跳MineFragment的action
+	public static final String CAR_PECCANCY = FeaturedFragment.class.getSimpleName();// 标识跳MineFragment的action
 
 	/**
 	 * 买车
