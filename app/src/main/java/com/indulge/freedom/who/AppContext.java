@@ -24,6 +24,7 @@ import java.util.UUID;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
 import cn.bmob.v3.helper.BmobNative;
+import cn.jpush.android.api.JPushInterface;
 
 
 public class AppContext extends Application {
@@ -60,8 +61,8 @@ public class AppContext extends Application {
 	private void init() {
 
 		/** 初始极光 */
-//		JPushInterface.setDebugMode(true);
-//		JPushInterface.init(this);
+		JPushInterface.setDebugMode(true);
+		JPushInterface.init(this);
 
 
 		//提供以下两种方式进行初始化操作：

@@ -144,22 +144,22 @@ public class publishActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,
-                        MultiImageSelectorActivity.class);
-                // whether show camera
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA,
-                        false);
-                // max select image amount
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT,
-                        18 - filesList.size());
-                // select mode (MultiImageSelectorActivity.MODE_SINGLE OR
-                // MultiImageSelectorActivity.MODE_MULTI)
-                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE,
-                        MultiImageSelectorActivity.MODE_MULTI);
-                // default select images (support array list)
-                startActivityForResult(intent,
-                        ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
-                addPicWindow.dismiss();
+//                Intent intent = new Intent(context,
+//                        MultiImageSelectorActivity.class);
+//                // whether show camera
+//                intent.putExtra(MultiImageSelectorActivity.EXTRA_SHOW_CAMERA,
+//                        false);
+//                // max select image amount
+//                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_COUNT,
+//                        18 - filesList.size());
+//                // select mode (MultiImageSelectorActivity.MODE_SINGLE OR
+//                // MultiImageSelectorActivity.MODE_MULTI)
+//                intent.putExtra(MultiImageSelectorActivity.EXTRA_SELECT_MODE,
+//                        MultiImageSelectorActivity.MODE_MULTI);
+//                // default select images (support array list)
+//                startActivityForResult(intent,
+//                        ImageUtils.REQUEST_CODE_GETIMAGE_BYSDCARD);
+//                addPicWindow.dismiss();
             }
         });
         // 点击空白处取消弹框
