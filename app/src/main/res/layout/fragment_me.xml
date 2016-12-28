@@ -9,67 +9,6 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical">
 
-        <LinearLayout
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginLeft="93dp"
-            android:layout_centerVertical="true"
-            android:background="@drawable/shape_bg_headimage"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+17"
-                android:textSize="12sp"
-                android:textColor="@color/white" />
-        </LinearLayout>
-
-
-        <com.indulge.freedom.who.view.roundedimageview.RoundedImageView
-            android:id="@+id/imageView3"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="60dp"
-            android:adjustViewBounds="false"
-            android:src="@drawable/test_touxiang3"
-            app:riv_border_color="#fff"
-            app:riv_border_width="3dp"
-            app:riv_corner_radius="6dp"
-            app:riv_mutate_background="false"
-            app:riv_oval="false" />
-
-
-        <com.indulge.freedom.who.view.roundedimageview.RoundedImageView
-            android:id="@+id/imageView2"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="30dp"
-            android:adjustViewBounds="false"
-            android:src="@drawable/test_touxiang2"
-            app:riv_border_color="#fff"
-            app:riv_border_width="3dp"
-            app:riv_corner_radius="6dp"
-            app:riv_mutate_background="false"
-            app:riv_oval="false" />
-
-        <com.indulge.freedom.who.view.roundedimageview.RoundedImageView
-            android:id="@+id/imageView1"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:adjustViewBounds="false"
-            android:src="@drawable/test_touxiang"
-            app:riv_border_color="#fff"
-            app:riv_border_width="3dp"
-            app:riv_corner_radius="6dp"
-            app:riv_mutate_background="false"
-            app:riv_oval="false" />
-
-    </RelativeLayout>
 
 </LinearLayout>

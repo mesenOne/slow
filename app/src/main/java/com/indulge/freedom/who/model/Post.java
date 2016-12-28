@@ -18,7 +18,7 @@ import cn.bmob.v3.datatype.BmobRelation;
 public class Post extends BmobObject {
 
     private String sTitle;
-    List<String> images = new ArrayList<String>();
+    ArrayList<String> images = new ArrayList<String>();
     private String sContent;
     private BmobRelation likes;
     private BmobPointer author;
@@ -35,16 +35,19 @@ public class Post extends BmobObject {
                 '}';
     }
 
-    public List<String> getImages() {
+    public ArrayList<String> getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(ArrayList<String> images) {
         this.images = images;
     }
 
     public Post(String sTitle) {
         this.sTitle = sTitle;
+    }
+
+    public Post() {
     }
 
     public String getsTitle() {

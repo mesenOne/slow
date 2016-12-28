@@ -93,7 +93,7 @@ public class CarouselView extends RelativeLayout {
 
 		/* 初始化导航点布局 */
 		mDots = new LinearLayout(mContext);
-		mDots.setPadding(0,0,0,10);
+		mDots.setPadding(0,0,0,12);
 		setParams(0);
 	}
 	

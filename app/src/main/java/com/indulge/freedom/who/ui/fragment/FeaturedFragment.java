@@ -33,6 +33,7 @@ import com.indulge.freedom.who.view.recyclerview_animators.adapters.AlphaInAnima
 import com.indulge.freedom.who.view.recyclerview_animators.animators.FadeInAnimator;
 import com.indulge.freedom.who.view.xrecyclerview.ProgressStyle;
 import com.indulge.freedom.who.view.xrecyclerview.XRecyclerView;
+import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,7 @@ import cn.bmob.v3.listener.FindListener;
  *
  * @author fangxiaotian
  */
-public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRecyclerView.LoadingListener{
+public class FeaturedFragment extends BaseFragment<XRecyclerView>{
 
 
     /**
@@ -120,17 +121,6 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
     @SuppressLint("InlinedApi")
     @Override
     protected void initAllMembersView(Bundle savedInstanceState) {
-        // 适配4.4的Translucent bar
-        if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-            // 透明状态栏
-            getActivity().getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            Window window = getActivity().getWindow();
-            window.getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
         initView();
         initData();
     }
@@ -142,15 +132,33 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
         ivRight.setVisibility(View.VISIBLE);
         ivRight.sendClickEvent(true);
         leftLocation.setVisibility(View.VISIBLE);
-
+        // 初始RecyclerView控件
+        initRecyclerView();
+        // 初始标题字体样式
         AssetManager mgr = getActivity().getAssets();//得到AssetManager
         Typeface tf = Typeface.createFromAsset(mgr, "fonts/MagmaWave.ttf");   //zhiheiti.ttf  lingHeiTi.ttf  HeiJian.TTF
         tvHeaderTittle.setTypeface(tf);
+        // 竖向列表适配器, 以及列表滑动动画
+        mPostList = new ArrayList<Post>();
+        mPostAdapter = new PostAdapter(context, mPostList,
+                R.layout.item_geogas_product_lv);
+        mRecyclerView.setItemAnimator(new FadeInAnimator());
+        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(mPostAdapter);
+        alphaAdapter.setFirstOnly(false);
+        alphaAdapter.setDuration(700);
+        alphaAdapter.setInterpolator(new OvershootInterpolator(.5f));
+        mRecyclerView.setAdapter(alphaAdapter);
+        // 初始横向控件适配器
+        mGalleryList = new ArrayList<Banner>();
+        mGalleryAdapter = new GalleryAdapter(context, R.layout.news_list_item, mGalleryList);
+        // 下拉刷新和滑动控件监听
+        eventAction();
+    }
 
+    private void initRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
-
 
         // 设置下拉刷新和加载更多动画
         mRecyclerView.setRefreshProgressStyle(ProgressStyle.LineScale);
@@ -160,8 +168,8 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
         headerView = LayoutInflater.from(getActivity()).inflate(R.layout.header_geogas_lv, (ViewGroup)getActivity().findViewById(android.R.id.content),false);
         mCarouselView = (CarouselView) headerView.findViewById(R.id.carouse_geogas_lv_header);
         mCarouselView.setParmsType(1);
-         mCarouselView.setDefaultWidthHeight(mScreenWidth,
-         (int) (mScreenWidth * 10.01f / 25.05f), 1);
+        mCarouselView.setDefaultWidthHeight(mScreenWidth,
+                (int) (mScreenWidth * 10.01f / 25.05f), 1);
         mHorizontalView = (CenterLockHorizontalScrollview) headerView.findViewById(R.id.id_listView_horizontal);
         mTriangleView = (ImageView) headerView.findViewById(R.id.iv_triangle);
 
@@ -169,7 +177,80 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
         mRecyclerView.addHeaderView(headerView);
         View footView = View.inflate(context, R.layout.footlayout, null);
         mRecyclerView.setFootView(footView);
+    }
 
+
+    private void initData() {
+        loadListData();
+        loadBanner();
+        loadGallery();
+    }
+
+
+    /**
+     * 横向列表数据
+     * ArrayAdaper和BaseAdapter的刷新机制不同，
+     * ArrayAdaper必须在有数据时再加适配器
+     * 不能 notifyDataSetChanged
+     */
+    private void loadGallery() {
+        mGalleryList.clear();
+        for (int i = 0; i < mUrlSmall.length; i++) {
+            Banner banner = new Banner();
+            banner.setsImage(mUrlSmall[i]);
+            mGalleryList.add(banner);
+        }
+        mHorizontalView.setAdapter(context, mGalleryAdapter);
+    }
+
+
+    /**
+     * banner控件数据
+     */
+    private void loadBanner() {
+        mBannerList.clear();
+        for (int i = 0; i < mUrlsBig.length; i++) {
+            Banner banner = new Banner();
+            banner.setsImage(mUrlsBig[i]);
+            mBannerList.add(banner);
+        }
+        mCarouselView.addAllImage(mBannerList);
+    }
+
+    /**
+     * RecyclerList列表数据
+     */
+    private void loadListData() {
+        BmobQuery<Post> query = new BmobQuery<Post>();
+        //按照时间降序
+        query.order("-createdAt");
+        //执行查询，第一个参数为上下文，第二个参数为查找的回调
+        query.findObjects(new FindListener<Post>() {
+            @Override
+            public void done(List<Post> postInfo,BmobException e) {
+                if(e==null){
+                    for (int i = 0; i < postInfo.size(); i++) {
+                        Logger.i("成功"+postInfo.size()+postInfo.get(i).toString());
+                    }
+                    mPostList.addAll(postInfo);
+                    mPostAdapter.notifyDataSetChanged();
+                }else{
+                    Log.i("bmob","失败："+e.getMessage());
+                }
+            }
+        });
+    }
+
+
+    private void eventAction() {
+        // banner点击事件
+        mCarouselView.start(new CarouselView.IItemClickListener() {
+            @Override
+            public void onClick(View v, Banner banner, int position) {
+            }
+        });
+
+        // RecyclerList点击事件
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -177,10 +258,8 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
                     public void run() {
                         mRecyclerView.refreshComplete();
                     }
-
                 }, 1000);            //refresh data here
             }
-
             @Override
             public void onLoadMore() {
                 new Handler().postDelayed(new Runnable() {
@@ -191,8 +270,7 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
             }
         });
 
-
-
+        // 横向控件角标事件点击
         mTriangleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -210,102 +288,7 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView> implements XRe
                 }
             }
         });
-
     }
-
-    private void initData() {
-        mPostList = new ArrayList<Post>();
-
-        BmobQuery<Post> query = new BmobQuery<Post>();
-        //按照时间降序
-        query.order("-createdAt");
-        //执行查询，第一个参数为上下文，第二个参数为查找的回调
-        query.findObjects(new FindListener<Post>() {
-            @Override
-            public void done(List<Post> postInfo,BmobException e) {
-                if(e==null){
-                    Log.i("bmob","成功"+postInfo.size()+postInfo.get(0).toString());
-                    mPostList.addAll(postInfo);
-                }else{
-                    Log.i("bmob","失败："+e.getMessage());
-                }
-            }
-        });
-
-        mPostAdapter = new PostAdapter(context, mPostList,
-                R.layout.item_geogas_product_lv);
-
-
-        /**
-         * 竖向列表数据, 以及列表滑动动画
-         */
-        mRecyclerView.setItemAnimator(new FadeInAnimator());
-        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(mPostAdapter);
-        alphaAdapter.setFirstOnly(false);
-        alphaAdapter.setDuration(700);
-        alphaAdapter.setInterpolator(new OvershootInterpolator(.5f));
-        mRecyclerView.setAdapter(alphaAdapter);
-
-
-
-        /**
-         * 横向列表数据
-         *
-         * ArrayAdaper和BaseAdapter的刷新机制不同，
-         * ArrayAdaper必须在有数据时再加适配器
-         * 不能 notifyDataSetChanged
-         */
-        mGalleryList = new ArrayList<Banner>();
-        mGalleryList.clear();
-        for (int i = 0; i < mUrlSmall.length; i++) {
-            Banner banner = new Banner();
-            banner.setsImage(mUrlSmall[i]);
-            mGalleryList.add(banner);
-            Log.i("FKH", mGalleryList.toString());
-        }
-        mGalleryAdapter = new GalleryAdapter(context, R.layout.news_list_item, mGalleryList);
-        mHorizontalView.setAdapter(context, mGalleryAdapter);
-
-
-        /**
-         * banner控件数据，和监听
-         */
-        mBannerList.clear();
-        for (int i = 0; i < mUrlsBig.length; i++) {
-            Banner banner = new Banner();
-            banner.setsImage(mUrlsBig[i]);
-            mBannerList.add(banner);
-        }
-        mCarouselView.addAllImage(mBannerList);
-        mCarouselView.start(new CarouselView.IItemClickListener() {
-            @Override
-            public void onClick(View v, Banner banner, int position) {
-
-            }
-        });
-
-//        mPostAdapter.notifyDataSetChanged();
-        mRecyclerView.setRefreshing(true);
-    }
-
-
-    /**
-     * 下拉刷新
-     */
-    @Override
-    public void onRefresh() {
-
-    }
-
-
-    /**
-     * 加载更多
-     */
-    @Override
-    public void onLoadMore() {
-
-    }
-
 
 //    /**
 //     * 点击事件

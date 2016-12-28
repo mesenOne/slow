@@ -7,11 +7,11 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="@android:color/transparent"
-        android:minHeight="10dp" />
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="24dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:minHeight="10dp" />-->
 
     <FrameLayout
         android:layout_width="match_parent"

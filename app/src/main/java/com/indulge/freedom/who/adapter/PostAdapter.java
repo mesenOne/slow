@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.indulge.freedom.who.model.Banner;
 import com.indulge.freedom.who.model.Post;
 import com.indulge.freedom.who.model.Product;
 import com.indulge.freedom.who.util.ScreenUtils;
+import com.orhanobut.logger.Logger;
 import com.squareup.picasso.Picasso;
 
 
@@ -33,9 +35,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 	private final Context context;
 	private final int mScreenWidth;
 	private final int mScreenHeight;
-	public ArrayList<Post> datas = null;
-	private List<Banner> mBannerList = new ArrayList<Banner>();
-	private Banner banner;
+	public ArrayList<Post> datas = new ArrayList<Post>();
+	private String imgUrl;
+	private ArrayList<String> imageUrl = new ArrayList<String>();
 
 	public PostAdapter(Context context, ArrayList<Post> datas, int itemLayout) {
 		this.datas = datas;
@@ -43,7 +45,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 		this.itemLayout = itemLayout; 
 		mScreenWidth = ScreenUtils.getScreenWidth(context);
 		mScreenHeight = ScreenUtils.getScreenHeight(context);
-
 	}
 
 
@@ -66,12 +67,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 	@Override
 	public void onBindViewHolder(ViewHolder viewHolder, int position) {
 		Post product = datas.get(position);
-
 		viewHolder.txtTitleChins.setText(product.getsTitle());
-//		if (product.getImage()!=null){
-//			Picasso.with(context.getApplicationContext()).load(product.getImage().getUrl())
-//					.config(Bitmap.Config.RGB_565).into(viewHolder.carouseView);
-//		}
+		if (product.getImages()!=null && product.getImages().size()>0){
+			viewHolder.carouseView.setVisibility(View.VISIBLE);
+			imageUrl.addAll(product.getImages());
+			for (int i = 0; i < imageUrl.size(); i++) {
+				Logger.i(i+"---ImageUrlCount");
+				imgUrl = imageUrl.get(i);
+			}
+			Picasso.with(context).load(imgUrl)
+					.config(Bitmap.Config.RGB_565).into(viewHolder.carouseView);
+		}else {
+			viewHolder.carouseView.setVisibility(View.GONE);
+		}
 	}
 
 

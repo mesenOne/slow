@@ -8,11 +8,6 @@
     android:background="#fff">
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="#FFF"
-        android:minHeight="10dp" />
 
 
     <FrameLayout

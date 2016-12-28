@@ -2,16 +2,22 @@
 <resources>
 
 
-    <color name="colorPrimary">#3F51B5</color>
+    <!--应用主色，应用于导航栏，状态栏，标签栏选中状态-->
+    <color name="colorPrimary">#999999</color>
+    <!--深色主色，用于默认状态栏背景色-->
+    <color name="colorPrimaryDark">#000</color>
+    <!--强调色，用于按钮-->
+    <color name="colorAccent">#fff</color>
+
+
 
     <color name="colorPrimaryMain">#fc225abc</color>
     <color name="main_black_shenshi">#2b323a</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
     <!-- 常用的颜色 -->
     <color name="red">#FF0000 </color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="black_a">#36000000</color>
     <color name="black_light">#393939</color>
     <color name="orange_app">#ea6111</color>
     <color name="main_app">#2b8dee</color>

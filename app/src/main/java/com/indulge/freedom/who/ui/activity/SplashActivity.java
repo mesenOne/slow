@@ -73,40 +73,6 @@ public class SplashActivity extends Activity {
     }
 
     private void getAd() {
-//        mAdCall = Http.getService().getAd(Http.getParams(null));
-//        mAdCall.enqueue(new Callback<Result<Ad>>() {
-//            @Override
-//            public void onResponse(Response<Result<Ad>> response,
-//                                   Retrofit retrofit) {
-//                if (response != null) {
-//                    Result<Ad> result = response.body();
-//                    if (result != null) {
-//                        Log.i("HY", "获取广告信息：" + result.toString());
-//                        switch (result.retCode) {
-//                            // 请求成功
-//                            case "200":
-////                                mAd = result.result;
-//                                mAd=null;  // 广告锁
-//                                if (mAd != null
-//                                        && !TextUtils.isEmpty(mAd
-//                                        .getStartPageImgNo4S())) {
-//                                    downLoadAd = new DownLoadAd();
-//                                    downLoadAd.execute(mAd.getStartPageImgNo4S());
-//                                }
-//                                break;
-//                        }
-//                    }
-//                } else {
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable arg0) {
-//
-//            }
-//
-//        });
     }
 
 
@@ -132,11 +98,6 @@ public class SplashActivity extends Activity {
 
                 @Override
                 public void onFinish() {
-
-//                    if (mAdCall != null) {
-//                        mAdCall.cancel();
-//                        mAdCall=null;
-//                    }
                     if (mAd != null && mAd.isStartPageIsDownLoad()) {
                         Intent intent = new Intent(SplashActivity.this,
                                 AdActivity.class);

@@ -90,7 +90,7 @@ public class HomePagerActivity extends BaseActivity implements
                 rbtSearch.setTextSize(10.5f);
                 rbtPeccancy.setTextSize(10.5f);
                 rbtMine.setTextSize(10.5f);
-                startActivityForResult(new Intent(context,publishActivity.class),0x886);
+                startActivityForResult(new Intent(context,PublishActivity.class),0x886);
                 show("发表");
             }
         });
@@ -127,8 +127,6 @@ public class HomePagerActivity extends BaseActivity implements
         } else {
             showFragment(0);
         }
-//        mBuyCarButton.setOnDoubleClickListener(this);// 设置双击事件
-//		getService();
     }
 
     /**
@@ -188,17 +186,6 @@ public class HomePagerActivity extends BaseActivity implements
                 mCurrentFm = mCarStagingFragment;
 
                 break;
-
-//            case R.id.rbt_slow_publish:
-//                rbtStage.setTextSize(10.5f);
-//                rbtSearch.setTextSize(10.5f);
-//                rbtPeccancy.setTextSize(10.5f);
-//                rbtMine.setTextSize(10.5f);
-//
-//                startActivity(new Intent(context,publishActivity.class));
-//                show("发表");
-//
-//                break;
 
             case R.id.rbt_slow_search:
                 rbtStage.setTextSize(10.5f);
@@ -297,39 +284,12 @@ public class HomePagerActivity extends BaseActivity implements
 
     @Override
     protected void onDestroy() {
-        SPUtil.saveAddPopupWindow(context.getApplicationContext(), true);
         AppContext.startedApp = false;
         exist = false;
-        unregisterReceiver(mReceiver);
         super.onDestroy();
     }
 
-    public BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent != null) {
-                switch (intent.getIntExtra(DownloadAPKService.STATUS, 0)) {
-                    case DownloadAPKService.LOADING:// 正在下载状态
-                        DownloadAPKService.sDownloadStatus = DownloadAPKService.LOADING;
-                        break;
-                    case DownloadAPKService.PAUSE:// 暂停状态
-                        DownloadAPKService.sDownloadStatus = DownloadAPKService.PAUSE;
-                        break;
-                    case DownloadAPKService.COMPLETE:// 完成状态
-                        DownloadAPKService.sDownloadStatus = DownloadAPKService.COMPLETE;
-                        show("最新版本下载完成");
-                        installApk();
-                        break;
-                    case DownloadAPKService.FAIL:// 异常，重开服务继续下载
-                        Log.i("HY", "异常");
-                        if (DownloadAPKService.sDownloadStatus != DownloadAPKService.COMPLETE) {
-                            DownloadAPKService.sDownloadStatus = DownloadAPKService.PAUSE;
-                        }
-                        break;
-                }
-            }
-        }
-    };
+
 
     /**
      * 安装apk

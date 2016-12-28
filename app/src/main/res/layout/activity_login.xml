@@ -8,6 +8,8 @@
 	android:id="@+id/my_soft_layout">
 
 
+
+
 	<!--<include layout="@layout/header_center_align" />-->
 <!--	<LinearLayout
 		android:id="@+id/header_view_login"
