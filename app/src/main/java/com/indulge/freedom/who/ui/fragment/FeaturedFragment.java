@@ -23,7 +23,6 @@ import com.indulge.freedom.who.adapter.GalleryAdapter;
 import com.indulge.freedom.who.adapter.PostAdapter;
 import com.indulge.freedom.who.model.Banner;
 import com.indulge.freedom.who.model.Post;
-import com.indulge.freedom.who.model.Product;
 import com.indulge.freedom.who.view.CarouselView;
 import com.indulge.freedom.who.view.CenterLockHorizontalScrollview;
 
@@ -132,22 +131,12 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
         ivRight.setVisibility(View.VISIBLE);
         ivRight.sendClickEvent(true);
         leftLocation.setVisibility(View.VISIBLE);
-        // 初始RecyclerView控件
-        initRecyclerView();
         // 初始标题字体样式
         AssetManager mgr = getActivity().getAssets();//得到AssetManager
         Typeface tf = Typeface.createFromAsset(mgr, "fonts/MagmaWave.ttf");   //zhiheiti.ttf  lingHeiTi.ttf  HeiJian.TTF
         tvHeaderTittle.setTypeface(tf);
-        // 竖向列表适配器, 以及列表滑动动画
-        mPostList = new ArrayList<Post>();
-        mPostAdapter = new PostAdapter(context, mPostList,
-                R.layout.item_geogas_product_lv);
-        mRecyclerView.setItemAnimator(new FadeInAnimator());
-        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(mPostAdapter);
-        alphaAdapter.setFirstOnly(false);
-        alphaAdapter.setDuration(700);
-        alphaAdapter.setInterpolator(new OvershootInterpolator(.5f));
-        mRecyclerView.setAdapter(alphaAdapter);
+        // 初始RecyclerView控件和列表适配器
+        initRecyclerView();
         // 初始横向控件适配器
         mGalleryList = new ArrayList<Banner>();
         mGalleryAdapter = new GalleryAdapter(context, R.layout.news_list_item, mGalleryList);
@@ -177,11 +166,23 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
         mRecyclerView.addHeaderView(headerView);
         View footView = View.inflate(context, R.layout.footlayout, null);
         mRecyclerView.setFootView(footView);
+
+        // 竖向列表适配器, 以及列表滑动动画
+        mPostList = new ArrayList<Post>();
+        mPostAdapter = new PostAdapter(context, mPostList,
+                R.layout.item_geogas_product_lv);
+        mRecyclerView.setItemAnimator(new FadeInAnimator());
+        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(mPostAdapter);
+        alphaAdapter.setFirstOnly(false);
+        alphaAdapter.setDuration(700);
+        alphaAdapter.setInterpolator(new OvershootInterpolator(.5f));
+        mRecyclerView.setAdapter(alphaAdapter);
+//        mRecyclerView.setLoadingMoreEnabled(false);
     }
 
 
     private void initData() {
-        loadListData();
+        loadListData(1);
         loadBanner();
         loadGallery();
     }
@@ -209,18 +210,37 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
      */
     private void loadBanner() {
         mBannerList.clear();
-        for (int i = 0; i < mUrlsBig.length; i++) {
-            Banner banner = new Banner();
-            banner.setsImage(mUrlsBig[i]);
-            mBannerList.add(banner);
-        }
-        mCarouselView.addAllImage(mBannerList);
+
+        BmobQuery<Banner> query = new BmobQuery<Banner>();
+        //按照时间降序
+        query.order("-createdAt");
+        //执行查询，第一个参数为上下文，第二个参数为查找的回调
+        query.findObjects(new FindListener<Banner>() {
+            @Override
+            public void done(List<Banner> bannerInfo,BmobException e) {
+                if(e==null){
+                    if (bannerInfo!=null && bannerInfo.size()>0){
+                        for (int i = 0; i < bannerInfo.size(); i++) {
+                            Logger.i(bannerInfo.size()+"---bannerInfo.size()"+bannerInfo.get(i).toString()+"---bannerInfo");
+                            mBannerList.add(bannerInfo.get(i));
+                        }
+                        mCarouselView.addAllImage(mBannerList);
+                    }
+                }else{
+                    Log.i("bmob","失败："+e.getMessage());
+                }
+            }
+        });
+
     }
 
     /**
      * RecyclerList列表数据
      */
-    private void loadListData() {
+    private void loadListData(int page) {
+        if (page==1){
+            mPostList.clear();
+        }
         BmobQuery<Post> query = new BmobQuery<Post>();
         //按照时间降序
         query.order("-createdAt");
@@ -234,6 +254,7 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
                     }
                     mPostList.addAll(postInfo);
                     mPostAdapter.notifyDataSetChanged();
+                    stopRefreshAndLoadMore();
                 }else{
                     Log.i("bmob","失败："+e.getMessage());
                 }
@@ -242,11 +263,16 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
     }
 
 
+    int n=100; int sum;
     private void eventAction() {
         // banner点击事件
         mCarouselView.start(new CarouselView.IItemClickListener() {
             @Override
             public void onClick(View v, Banner banner, int position) {
+                sum=0;
+                // 计算1到100相加的结果
+                sum=(1+n)*n/2;
+                show(sum+"");
             }
         });
 
@@ -254,19 +280,10 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                new Handler().postDelayed(new Runnable(){
-                    public void run() {
-                        mRecyclerView.refreshComplete();
-                    }
-                }, 1000);            //refresh data here
+                initData();
             }
             @Override
             public void onLoadMore() {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        mRecyclerView.setNoMore(true);
-                    }
-                }, 1000);
             }
         });
 
@@ -306,6 +323,12 @@ public class FeaturedFragment extends BaseFragment<XRecyclerView>{
 
 
 
-
+    /**
+     * 停止所有加载动画
+     */
+    public void stopRefreshAndLoadMore() {
+        mRecyclerView.refreshComplete();
+        mRecyclerView.loadMoreComplete();
+    }
 
 }

@@ -1,29 +1,18 @@
 package com.indulge.freedom.who;
 
 import android.app.Application;
-import android.content.Context;
 import android.os.Environment;
-import android.provider.SyncStateContract;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.Display;
-import android.widget.Toast;
 
-import com.indulge.freedom.who.config.Api;
-import com.indulge.freedom.who.permission.PermissionListener;
-import com.indulge.freedom.who.permission.PermissionManager;
+import com.indulge.freedom.who.http.Api;
 import com.indulge.freedom.who.util.LocalImageHelper;
 import com.indulge.freedom.who.util.SPUtil;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobConfig;
-import cn.bmob.v3.helper.BmobNative;
 import cn.jpush.android.api.JPushInterface;
 
 

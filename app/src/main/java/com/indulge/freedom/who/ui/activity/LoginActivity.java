@@ -26,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.indulge.freedom.who.R;
-import com.indulge.freedom.who.config.Api;
+import com.indulge.freedom.who.http.Api;
 import com.indulge.freedom.who.model.LoginUserInfo;
 import com.indulge.freedom.who.permission.PermissionListener;
 import com.indulge.freedom.who.permission.PermissionManager;
@@ -518,8 +518,8 @@ public class LoginActivity extends BaseActivity {
         user.setMobilePhoneNumber(userNum);
         user.setPassword(password);
         //注意：不能用save方法进行注册//
-        user.setAge(18);//
-        user.setSex(false);  // false为男
+        user.setAge(25);//
+        user.setSex(true);  // false为男
         addSubscription(user.signOrLogin(strVerification, new SaveListener<LoginUserInfo>() {
 
             @Override
@@ -734,6 +734,7 @@ public class LoginActivity extends BaseActivity {
         } else {
             if (System.currentTimeMillis() - exitTime > 2000) {
                 show("登陆开启精彩生活!");
+                startActivity(new Intent(LoginActivity.this,HomePagerActivity.class));
                 exitTime = System.currentTimeMillis();
             } else {
                 SPUtil.saveAddPopupWindow(context.getApplicationContext(), true);

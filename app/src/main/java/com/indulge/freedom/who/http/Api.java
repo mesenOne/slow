@@ -1,4 +1,4 @@
-package com.indulge.freedom.who.config;
+package com.indulge.freedom.who.http;
 
 /**
  * 服务器与接口Api
@@ -23,9 +23,6 @@ public class Api {
 
 	/** 当前服务器 */
 	public static final String SERVICE = MAIN_API;
-
-	/** 支付宝回调地址 */
-	public static final String ALIPAY = "http://trm.zhihuiqiche.com/ErShouCar/Order/notify_url";// 测试服
 
 
 	/************************************************

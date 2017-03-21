@@ -1,13 +1,9 @@
 package com.indulge.freedom.who.ui.activity;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,14 +19,12 @@ import com.indulge.freedom.who.AppContext;
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.config.Constant;
 
-import com.indulge.freedom.who.service.DownloadAPKService;
 import com.indulge.freedom.who.ui.fragment.FeaturedFragment;
 import com.indulge.freedom.who.ui.fragment.CarStagingFragment;
 import com.indulge.freedom.who.ui.fragment.MineFragment;
 import com.indulge.freedom.who.ui.fragment.SearchFragment;
 import com.indulge.freedom.who.util.SPUtil;
 import com.indulge.freedom.who.view.DoubleClickRadioButton;
-import com.readystatesoftware.viewbadger.BadgeView;
 
 import butterknife.Bind;
 
@@ -56,18 +50,11 @@ public class HomePagerActivity extends BaseActivity implements
     @Bind(R.id.rbt_slow_publish)
     Button rbtPublish;
 
-
-
-//    DoubleClickRadioButton mBuyCarButton;
     private MineFragment mMineFragment;
     private SearchFragment mSearchFragment;
     private CarStagingFragment mCarStagingFragment;
     private FeaturedFragment mFeaturedFragment;
 
-    private BadgeView mBuyCarBadgeView;
-
-    private long mBuyCarCount;
-    private Object mChoose;
 
     private FragmentManager fm;
     private Fragment mCurrentFm;
@@ -98,13 +85,6 @@ public class HomePagerActivity extends BaseActivity implements
 
     @Override
     protected void getData() {
-        /**
-         * 注册用来接收下载apk服务发来的广播
-         */
-//		IntentFilter filter = new IntentFilter(
-//				DownloadAPKService.DOWNLOAD_ACTION);
-//		registerReceiver(mReceiver, filter);
-
         fm = getSupportFragmentManager();
         rgUsedCar.setOnCheckedChangeListener(this);
         listFragments = new ArrayList<Fragment>();
@@ -291,21 +271,6 @@ public class HomePagerActivity extends BaseActivity implements
 
 
 
-    /**
-     * 安装apk
-     */
-    protected void installApk() {
-        File apkfile = new File(AppContext.getAppDir(), DownloadAPKService.APK);
-        if (!apkfile.exists()) {
-            return;
-        }
-        Intent intent = new Intent();
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(apkfile),
-                "application/vnd.android.package-archive");
-        startActivity(intent);
-    }
 
 
     @Override

@@ -15,11 +15,8 @@ import android.widget.TextView;
 
 
 import com.indulge.freedom.who.R;
-import com.indulge.freedom.who.model.Banner;
 import com.indulge.freedom.who.model.Post;
-import com.indulge.freedom.who.model.Product;
 import com.indulge.freedom.who.util.ScreenUtils;
-import com.orhanobut.logger.Logger;
 import com.squareup.picasso.Picasso;
 
 
@@ -69,10 +66,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 		Post product = datas.get(position);
 		viewHolder.txtTitleChins.setText(product.getsTitle());
 		if (product.getImages()!=null && product.getImages().size()>0){
+			imageUrl.clear();
 			viewHolder.carouseView.setVisibility(View.VISIBLE);
 			imageUrl.addAll(product.getImages());
 			for (int i = 0; i < imageUrl.size(); i++) {
-				Logger.i(i+"---ImageUrlCount");
 				imgUrl = imageUrl.get(i);
 			}
 			Picasso.with(context).load(imgUrl)
