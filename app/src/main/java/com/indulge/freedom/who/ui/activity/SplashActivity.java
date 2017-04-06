@@ -13,12 +13,9 @@ import com.indulge.freedom.who.AppContext;
 import com.indulge.freedom.who.AppManager;
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.config.Constant;
-//import com.indulge.freedom.who.http.Http;
-//import com.indulge.freedom.who.http.Result;
-import com.indulge.freedom.who.model.Ad;
+
 import com.indulge.freedom.who.util.SPUtil;
-//import com.umeng.analytics.AnalyticsConfig;
-//import com.umeng.analytics.MobclickAgent;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,23 +39,17 @@ public class SplashActivity extends Activity {
     private AnimationDrawable mAnimationDrawable;
     private CountDownTimer mTimer;
     private int mDisplay;
-    private Ad mAd;// 广告页信息
-//    private Call<Result<Ad>> mAdCall;
-    private DownLoadAd downLoadAd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         AppContext.startedApp = true;
-
-
         mSplash = (ImageView) findViewById(R.id.img_splash);
         mAnimationDrawable = (AnimationDrawable) mSplash.getDrawable();
         mAnimationDrawable.start();
         mDisplay = 2500;
-
-        getAd();
+//        getAd();
     }
 
     @Override
@@ -72,8 +63,6 @@ public class SplashActivity extends Activity {
         super.onWindowFocusChanged(hasFocus);
     }
 
-    private void getAd() {
-    }
 
 
 
@@ -98,12 +87,7 @@ public class SplashActivity extends Activity {
 
                 @Override
                 public void onFinish() {
-                    if (mAd != null && mAd.isStartPageIsDownLoad()) {
-                        Intent intent = new Intent(SplashActivity.this,
-                                AdActivity.class);
-                        intent.putExtra(AdActivity.AD, mAd);
-                        startActivity(intent);
-                    } else {  // 如果没有广告
+
                         if (SPUtil.getFirstIn(SplashActivity.this)) {
                             SPUtil.saveFirstIn(SplashActivity.this, false);
                             // 如果是第一次登陆就启动引导页
@@ -126,7 +110,6 @@ public class SplashActivity extends Activity {
                             }
 
                         }
-                    }
                     finish();
                 }
             };

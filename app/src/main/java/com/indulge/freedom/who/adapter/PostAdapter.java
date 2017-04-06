@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.indulge.freedom.who.R;
 import com.indulge.freedom.who.model.Post;
 import com.indulge.freedom.who.util.ScreenUtils;
+import com.orhanobut.logger.Logger;
 import com.squareup.picasso.Picasso;
 
 
@@ -71,7 +72,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 			imageUrl.addAll(product.getImages());
 			for (int i = 0; i < imageUrl.size(); i++) {
 				imgUrl = imageUrl.get(i);
+				// 实现一个帖子发表多张图片
+				Logger.i("---imageUrl---"+imageUrl.size()+"---("+i+")"+imgUrl);
 			}
+
+
+
 			Picasso.with(context).load(imgUrl)
 					.config(Bitmap.Config.RGB_565).into(viewHolder.carouseView);
 		}else {

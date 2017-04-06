@@ -64,7 +64,9 @@ public class PublishActivity extends BaseActivity {
 
 
     private void initData() {
-        String picPath = "sdcard/timg.jpg";
+
+        // 1,上传本地图片到服务器
+        String picPath = "sdcard/dsfa.jpg";
         final BmobFile bmobFile = new BmobFile(new File(picPath));
         bmobFile.uploadblock(new UploadFileListener() {
 
@@ -86,13 +88,21 @@ public class PublishActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 2, 文件上传完成后返回了服务器url，将这个url保存到该帖子的集合表字段中
+     * @param fileUrl
+     */
     public void uploadFromImgUrl(String fileUrl) {
-        String objectId = (String) BmobUser.getObjectByKey("objectId");
         Post p = new Post();
         p.setsTitle("我的新成绩");
         //添加String类型的数组
         //p.add("hobbys", "唱歌");                         // 添加单个String
-        p.addAll("images", Arrays.asList(fileUrl));    // 添加多个String
+
+        //　这里可以为批量上传　返回的url集合
+        //  String[] fils = {fileUrl,"http://www.shanghai666img.jpg"};
+        String[] fils = {fileUrl};
+
+        p.addAll("images", Arrays.asList(fils));    // 添加多个url, images字段在数据库中是集合类型
         p.save(new SaveListener<String>() {
             @Override
             public void done(String objectId, BmobException e) {

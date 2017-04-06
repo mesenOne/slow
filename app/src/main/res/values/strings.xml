@@ -60,11 +60,11 @@
     <string name="usedCar_hotBrand">热门品牌</string>
     <string name="usedCar_searchHistory">搜索历史</string>
     <string name="usedCar_clearHistory">清空历史</string>
-    <string name="base_bottom_1">地气</string>
-    <string name="base_bottom_2">城市圈</string>
-    <string name="base_bottom_3">我</string>
-    <string name="base_bottom_5">用车</string>
-    <string name="base_bottom_4">消息</string>
+    <string name="base_bottom_1">健康</string><!--地气-->
+    <string name="base_bottom_2">子女</string><!--地气-->
+    <string name="base_bottom_3">兴趣</string><!--地气-->
+    <string name="base_bottom_5">个人中心</string><!--地气-->
+    <string name="base_bottom_4">消息</string><!--地气-->
 
 
     <!-- 只能输入字母或数字的校验字符串 -->
